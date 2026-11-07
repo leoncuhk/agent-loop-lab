@@ -1,22 +1,41 @@
 # Agent Loop Lab
 
-**最终结果：[四种优化方法的完整公平复测](FAIR-RESULTS.md)。** 12道独立准备的新题、四方法、每题两次，共96/96首次通过；正式原始证据独立验收无不一致。工具单循环平均tokens最低，按需相对全量在较大手册库的同题子集省31.5% tokens，多Agent在6/24次实际委派且没有观察到质量增益。
+**从[研究交付：一个主 Agent、操作手册，还是多个 Agent？](HANDOFF.md)开始。** 这份文档从一条条件退货请求讲起，说明为什么做三轮实验、哪两类失败要靠工具修、什么时候值得尝试 Skills 或子 Agent。
 
-Git 版本保留实验代码、锁定依赖、测试、合成题与冻结摘要、评估报告和核验脚本。`runs/` 和 `runtime/` 是本机原始证据（模型请求/回复、事件、数据库等），不纳入 Git；文档中指向这些目录的链接仅在保留原始证据的工作区可打开。已经使用过的合成留出题可用于复现，不应在后续调优时再当成全新的盲测题。
+在正式的 12 道合成新题上，四种配置各 24/24 首次通过；单 Agent＋工具的平均 tokens 最少。动作均在本地模拟系统中发生。实验不涉及真实客户、支付或生产部署。
 
-过程入口：[冻结方案](FAIR-RUNNING.md)、[审查与修复](FAIR-REVIEW.md)、[开发阶段额度阻塞时的历史检查点](FAIR-STATUS.md)。额度已恢复，正式运行已经结束。
+| 接手时想做什么 | 阅读入口 |
+|---|---|
+| 了解设计依据、用于应用选型 | [交付导读](HANDOFF.md) → [正式结果及推断边界](FAIR-RESULTS.md) |
+| 理解方案如何演进 | [客服实验](RESULTS.md) → [困难实验的失败案例](HARD-RESULTS.md) → [四种实现的审查与修复](FAIR-REVIEW.md) |
+| 复查四组是否公平 | [比较规格](FAIR-SPEC.md)、[冻结记录](reviews/fair-v2-freeze.json)、[开发证据核验](reviews/fair-dev-evidence.md) |
+| 核验正式数据 | [独立验收结果](reports/fair-v2-final-independent-audit.json)、[配对资源比较](reports/fair-v2-resource-comparison.json)、[验收脚本用法](analysis/FAIR-EVIDENCE-AUDIT.md) |
 
-**上一轮诊断：[困难任务实践与认知变化](HARD-RESULTS.md)。** 旧批次启动33/48次后保护停止；其失败用于设计改进，不作方法排名。实现说明见 [HARD-README](HARD-README.md)。下文简单任务结果保留为更早的证据。
+## 复核或复跑
 
-用真实模型对照实验判断：何时保留独立 Agent，何时共享上下文，以及专业知识应按需还是预先加载。
+**只复核，不调用模型。** 在仓库根目录运行工程测试；若本机还保留正式运行目录，可进一步复算证据：
 
-这是独立的研究实验与可运行应用骨架。业务数据均为合成订单，动作写入本地 SQLite；没有连接客户数据、付款、真实退款或生产系统。冻结设计与验收见 [SPEC](SPEC.md)，选型背景见 [实现比较](../docs/agent-loop-alternatives-2026-11-06/README.md)。
+```bash
+uv sync --frozen --extra dev
+uv run --frozen --extra dev pytest -q
+uv run --frozen --extra dev ruff check .
+# 需要本机原始 runs/；最终核验看 final_acceptance 和 full_comparison_eligible。
+python3 -B analysis/audit_fair_evidence.py runs/fair-holdout-v2
+```
 
-真实重复实验发现并修复了一项桥接批次上限缺陷；旧记录和新协议分开保留，见 [v2 修正与补充实验](CORRECTION.md)。
+**重新运行正式配置，会消耗真实模型额度。** 需要已登录且可用的 Codex CLI；使用新输出目录，保留原批次。以下是同题回归。若用这些题调了方法，要另留新题才能再次检验泛化。
 
-**已完成的实际结果与推荐配置：[RESULTS.md](RESULTS.md)。** 当前合成业务范围默认tools主循环；Skills和multi保留为可比较选项。
+```bash
+uv run --frozen python -m loop_lab.fair.study test \
+  --output runs/my-fair-replay --receipt reviews/fair-v2-freeze.json
+```
 
-## 四个可执行候选
+Git 标签 `fair-v2`（`20074a8`）固定了实验代码、依赖、合成题、冻结摘要和核验报告。原始模型请求/回复、事件和数据库留在本机 `runs/`、`runtime/`，不纳入 Git；只有代码仓时可以阅读验收结果或做新的运行，不能从摘要还原旧轨迹。工作区内另有[原文配套示例的证据核查](../docs/2026-11-06-single-agent-loop-kit-evidence.md)和[开源实现选型依据](../docs/agent-loop-alternatives-2026-11-06/README.md)。
+
+<details>
+<summary>第一轮客服实验：四种旧配置、条件退货演示与原始运行说明</summary>
+
+## 客服实验的四个可执行候选
 
 | 名称 | 实现 | 要检验的问题 |
 |---|---|---|
@@ -89,3 +108,5 @@ CLI 启动、认证及自有基础上下文包含在耗时与用量中。这不�
 独立 Standards/Spec 审查先后发现并修复了：动作后补查条件仍通过、拒绝后重试漏判、全局预算和单任务预算混淆、用量未知仍继续调用、恢复身份/预算重置、多审批中断与在途预算调度问题。真实效果实验在这些修复后冻结。
 
 设计参考：[LangChain Skills 示例](https://docs.langchain.com/oss/python/langchain/multi-agent/skills-sql-assistant)、[LangGraph interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)、[原文迁移 kit](https://github.com/anthropics/single-agent-loop-kit)。本实验没有复制参考 kit 的业务数据或将其示例成绩当作自己的结果。
+
+</details>
