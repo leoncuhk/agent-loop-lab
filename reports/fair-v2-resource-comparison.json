@@ -1,0 +1,203 @@
+{
+  "trials_sha256": "450306b9a5e826d5c14b68379b0abb34cc0227625cbac343047c309390b5aedd",
+  "scope": "Descriptive post-run secondary analysis; same case and rep in each pair.",
+  "eager_vs_skills": {
+    "all": {
+      "left": "eager",
+      "right": "skills",
+      "paired_trials": 24,
+      "distinct_tasks": 12,
+      "model_calls": {
+        "left_mean": 4.416666666666667,
+        "right_mean": 4.541666666666667,
+        "right_pct_vs_left": 2.8301886792452935,
+        "right_lower_trials": 2,
+        "right_higher_trials": 4
+      },
+      "tokens": {
+        "left_mean": 80098.58333333333,
+        "right_mean": 66721.625,
+        "right_pct_vs_left": -16.70061788441951,
+        "right_lower_trials": 19,
+        "right_higher_trials": 5
+      },
+      "latency_s": {
+        "left_mean": 90.46444349312515,
+        "right_mean": 94.4688674531244,
+        "right_pct_vs_left": 4.42651698874772,
+        "right_lower_trials": 9,
+        "right_higher_trials": 15
+      }
+    },
+    "small": {
+      "left": "eager",
+      "right": "skills",
+      "paired_trials": 12,
+      "distinct_tasks": 6,
+      "model_calls": {
+        "left_mean": 4.916666666666667,
+        "right_mean": 4.916666666666667,
+        "right_pct_vs_left": 0.0,
+        "right_lower_trials": 2,
+        "right_higher_trials": 2
+      },
+      "tokens": {
+        "left_mean": 71368.66666666667,
+        "right_mean": 72561.25,
+        "right_pct_vs_left": 1.6710180938413588,
+        "right_lower_trials": 8,
+        "right_higher_trials": 4
+      },
+      "latency_s": {
+        "left_mean": 102.37367446533244,
+        "right_mean": 105.06975231933393,
+        "right_pct_vs_left": 2.6335655802942615,
+        "right_lower_trials": 4,
+        "right_higher_trials": 8
+      }
+    },
+    "large": {
+      "left": "eager",
+      "right": "skills",
+      "paired_trials": 12,
+      "distinct_tasks": 6,
+      "model_calls": {
+        "left_mean": 3.9166666666666665,
+        "right_mean": 4.166666666666667,
+        "right_pct_vs_left": 6.382978723404253,
+        "right_lower_trials": 0,
+        "right_higher_trials": 2
+      },
+      "tokens": {
+        "left_mean": 88828.5,
+        "right_mean": 60882,
+        "right_pct_vs_left": -31.46118644354008,
+        "right_lower_trials": 11,
+        "right_higher_trials": 1
+      },
+      "latency_s": {
+        "left_mean": 78.55521252091785,
+        "right_mean": 83.86798258691488,
+        "right_pct_vs_left": 6.763103167192552,
+        "right_lower_trials": 5,
+        "right_higher_trials": 7
+      }
+    }
+  },
+  "tools_vs_others": {
+    "skills": {
+      "left": "tools",
+      "right": "skills",
+      "paired_trials": 24,
+      "distinct_tasks": 12,
+      "model_calls": {
+        "left_mean": 4.458333333333333,
+        "right_mean": 4.541666666666667,
+        "right_pct_vs_left": 1.869158878504673,
+        "right_lower_trials": 1,
+        "right_higher_trials": 3
+      },
+      "tokens": {
+        "left_mean": 60752.875,
+        "right_mean": 66721.625,
+        "right_pct_vs_left": 9.824637928657687,
+        "right_lower_trials": 2,
+        "right_higher_trials": 22
+      },
+      "latency_s": {
+        "left_mean": 92.42078597920772,
+        "right_mean": 94.4688674531244,
+        "right_pct_vs_left": 2.2160398791430502,
+        "right_lower_trials": 12,
+        "right_higher_trials": 12
+      }
+    },
+    "eager": {
+      "left": "tools",
+      "right": "eager",
+      "paired_trials": 24,
+      "distinct_tasks": 12,
+      "model_calls": {
+        "left_mean": 4.458333333333333,
+        "right_mean": 4.416666666666667,
+        "right_pct_vs_left": -0.9345794392523366,
+        "right_lower_trials": 2,
+        "right_higher_trials": 3
+      },
+      "tokens": {
+        "left_mean": 60752.875,
+        "right_mean": 80098.58333333333,
+        "right_pct_vs_left": 31.843280393451877,
+        "right_lower_trials": 4,
+        "right_higher_trials": 20
+      },
+      "latency_s": {
+        "left_mean": 92.42078597920772,
+        "right_mean": 90.46444349312515,
+        "right_pct_vs_left": -2.11677758997062,
+        "right_lower_trials": 14,
+        "right_higher_trials": 10
+      }
+    },
+    "multi": {
+      "left": "tools",
+      "right": "multi",
+      "paired_trials": 24,
+      "distinct_tasks": 12,
+      "model_calls": {
+        "left_mean": 4.458333333333333,
+        "right_mean": 6.375,
+        "right_pct_vs_left": 42.990654205607484,
+        "right_lower_trials": 0,
+        "right_higher_trials": 9
+      },
+      "tokens": {
+        "left_mean": 60752.875,
+        "right_mean": 86743.875,
+        "right_pct_vs_left": 42.78151445507723,
+        "right_lower_trials": 2,
+        "right_higher_trials": 22
+      },
+      "latency_s": {
+        "left_mean": 92.42078597920772,
+        "right_mean": 111.64945529162408,
+        "right_pct_vs_left": 20.805567826205575,
+        "right_lower_trials": 12,
+        "right_higher_trials": 12
+      }
+    }
+  },
+  "delegated_multi_vs_paired_tools": {
+    "left": "multi",
+    "right": "tools",
+    "paired_trials": 6,
+    "distinct_tasks": 3,
+    "model_calls": {
+      "left_mean": 13.333333333333334,
+      "right_mean": 6.166666666666667,
+      "right_pct_vs_left": -53.75,
+      "right_lower_trials": 6,
+      "right_higher_trials": 0
+    },
+    "tokens": {
+      "left_mean": 171798,
+      "right_mean": 83100,
+      "right_pct_vs_left": -51.6292389899766,
+      "right_lower_trials": 6,
+      "right_higher_trials": 0
+    },
+    "latency_s": {
+      "left_mean": 250.4801925278298,
+      "right_mean": 179.66836997216646,
+      "right_pct_vs_left": -28.270428029072892,
+      "right_lower_trials": 5,
+      "right_higher_trials": 1
+    }
+  },
+  "delegated_cases": {
+    "FH-R03": 2,
+    "FH-P05": 2,
+    "FH-P06": 2
+  },
+  "note": "Library size differs between cases; subset differences do not isolate the causal effect of growing a library. Delegation is adaptive, so its selected subset is descriptive. Latency includes the shared queue and CLI."
+}

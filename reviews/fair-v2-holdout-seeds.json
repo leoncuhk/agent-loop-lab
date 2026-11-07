@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 75832016,
+    "family": "planning",
+    "group_count": 3
+  },
+  {
+    "seed": 68221626,
+    "family": "planning",
+    "group_count": 3
+  },
+  {
+    "seed": 88018628,
+    "family": "planning",
+    "group_count": 4
+  },
+  {
+    "seed": 26187918,
+    "family": "planning",
+    "group_count": 4
+  },
+  {
+    "seed": 67249904,
+    "family": "planning",
+    "group_count": 5
+  },
+  {
+    "seed": 39630761,
+    "family": "planning",
+    "group_count": 5
+  },
+  {
+    "seed": 93155187,
+    "family": "revision",
+    "group_count": 3
+  },
+  {
+    "seed": 18425914,
+    "family": "revision",
+    "group_count": 4
+  },
+  {
+    "seed": 41926616,
+    "family": "revision",
+    "group_count": 5
+  },
+  {
+    "seed": 88865082,
+    "family": "audit",
+    "branch_count": 3
+  },
+  {
+    "seed": 12930829,
+    "family": "audit",
+    "branch_count": 4
+  },
+  {
+    "seed": 12073778,
+    "family": "audit",
+    "branch_count": 4
+  }
+]

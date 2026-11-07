@@ -1,0 +1,33 @@
+{
+  "changed_after_model_run": [
+    "src/loop_lab/hard/runtime.py",
+    "src/loop_lab/hard/world.py"
+  ],
+  "reason": "Expose existing calculator limits and improve range error; no business rules/oracle changed; not re-tested with live models after user finish-up",
+  "release_fingerprint": {
+    "pyproject.toml": "1eabca94df3178f4b2cc44f9c197bf7364cfa96bd172dab3532c54c93382e6c9",
+    "uv.lock": "ea72e953c8220e11fbeee7bbd0c990e440c585105a043f523c82d31e4ab258c5",
+    "src/loop_lab/__init__.py": "02a604f9d993fe3152ad82f88981a5ca5ce5bf1a3a0b06da440f4d8d325558bf",
+    "src/loop_lab/cli.py": "5a884745a7c77e5d16959e9fb173016fc175634bd9edae1b0f100cac0c5cdc5a",
+    "src/loop_lab/domain.py": "e3012029829a453eef8b02a4c5d06b3e5960abcca63dfd5297d7c4ec78fb31bf",
+    "src/loop_lab/experiment.py": "81046e9bd857666eec012de1b25e38dbfb67ba4fc8b92427c120f51c3858cc9f",
+    "src/loop_lab/hard/__init__.py": "a8121c769b8edce66086b9f605ddd5df0ea52eac24fa7dfb24c6d34a85d8177a",
+    "src/loop_lab/hard/knowledge.py": "1818708d742516232b40fc9f077beae8af1482e1ead3af37b6c11dac6731e5c8",
+    "src/loop_lab/hard/oracles.py": "f67de3811bef25989c0d51358c9924be1112a76440667290ff19024ff584541b",
+    "src/loop_lab/hard/run.py": "4de474451f788a5349afec2433d4185984f7a72c5326eec9d89d08e4aad3193e",
+    "src/loop_lab/hard/runtime.py": "5c8c2758435e94c745b45c43fbc1d38c1b93774e7c0022540021d60ebf004798",
+    "src/loop_lab/hard/scoring.py": "ee2c66dd0b78b80298eba46f107680920ed84f5c5340dadbcf0b33d6f8da4cdd",
+    "src/loop_lab/hard/tasks.py": "b23facad8d520ada19b9998cf6c4c506705122a1ac16dad1be4b412c0770185c",
+    "src/loop_lab/hard/world.py": "5879bd8f519065b683450fdd04e2fa9443f1fac5aa597928c913e2d3b69eca99",
+    "src/loop_lab/integrity.py": "e598b8105a5c1af27cec50b148bf97a4fc9f4e273febe70d946ef0bc6b6d68dc",
+    "src/loop_lab/models.py": "260ccdb5e1fd5951bacec120d216ea445b1bd5dcc276c1a5770d28c747259513",
+    "src/loop_lab/report.py": "d39a7850475acd5d46e6a7a629fa41a3b89171a0b6503da32ebd7b369d4cb729",
+    "src/loop_lab/runtime.py": "82402877b87fdc191dcc472b125140ca81d2dc8dd67069284025c6ebbcd2f339",
+    "src/loop_lab/schema.py": "a9dc30fccb301a0e7c25d8a097cd9f6e022763f9374b833aba8113b55ef4b311",
+    "src/loop_lab/scoring.py": "4630197ff92164d779e7910e24a1196d2505ce500f836b21e65b03c7994267fc",
+    "src/loop_lab/skills.py": "eb41d2cf72fb054d69022f49035475aa70c87b671bea71c2e11a86743c0c7d0e",
+    "src/loop_lab/tasks.py": "a0871e63c0c2970432388a9467ceece55ba1e29d4d3a3001fa3f7d03723e1eff",
+    "skills/returns/SKILL.md": "a1d7b043ffa4c6e187b2957cb568a0b1f642c6481646f723193e7f7300af233b",
+    "skills/shipping/SKILL.md": "c2ffdd6419036661d467096c29a8624826846aca45feab0e532dca271397055b"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "input_sha256": {
+    "runs/corrected-regression-v2": "8b17c7ac89eb77b41a3338fd58cb50183ffaab00e1a7c82ded064da659a99e2c"
+  },
+  "analysis_sha256": "499401a783da4fe4941acf555a3ae263e777c645c64056851a8678e4ae2e4718",
+  "total_calls": 113,
+  "total_tokens": 821280,
+  "variants": {
+    "eager": {
+      "tasks": 16,
+      "trials": 16,
+      "passed": 16,
+      "errors": 0,
+      "mean_latency_s": 29.18649466675106,
+      "median_latency_s": 26.238184583504335,
+      "mean_calls": 2.375,
+      "mean_tokens": 17742.8125,
+      "skill_loaded_trials": 0,
+      "failed": []
+    },
+    "tools": {
+      "tasks": 16,
+      "trials": 16,
+      "passed": 16,
+      "errors": 0,
+      "mean_latency_s": 25.419299057314674,
+      "median_latency_s": 24.506165312501253,
+      "mean_calls": 2.125,
+      "mean_tokens": 14743.1875,
+      "skill_loaded_trials": 0,
+      "failed": []
+    },
+    "skills": {
+      "tasks": 16,
+      "trials": 16,
+      "passed": 16,
+      "errors": 0,
+      "mean_latency_s": 31.635697033811994,
+      "median_latency_s": 28.315229979496507,
+      "mean_calls": 2.5625,
+      "mean_tokens": 18844,
+      "skill_loaded_trials": 13,
+      "failed": []
+    }
+  },
+  "note": "Task/trial counts are explicit; only identical frozen protocols are combined. Different repetition counts are not interchangeable evidence strength."
+}

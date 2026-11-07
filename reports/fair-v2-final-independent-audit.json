@@ -1,0 +1,3003 @@
+{
+  "state": "complete",
+  "phase": "sealed-holdout",
+  "final_acceptance": true,
+  "full_comparison_eligible": true,
+  "planned": 96,
+  "logged": 96,
+  "verified_trials": 96,
+  "independently_verified_task_oracles": 12,
+  "stop_reason": null,
+  "missing": [],
+  "freeze_and_snapshot_match": true,
+  "sealed_material_verified": true,
+  "evidence_sha256": {
+    "auditor": "42bc6d2b314d524f900d46c03ccf47495366ec00b9ab5e67543782dc8230ba4f",
+    "freeze_receipt": "4386fc8d36fb07448b6babc49549abddcd1b7882cbeaf522dad174bbe0af954c",
+    "final_manifest": "24d695ad2c5bbed2ffead8599da04e76c2a64c5a275d03fa67550eac33f4bcae",
+    "final_trials": "450306b9a5e826d5c14b68379b0abb34cc0227625cbac343047c309390b5aedd"
+  },
+  "first_attempt": {
+    "tools": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 0,
+      "model_calls": 107,
+      "worker_calls": 0,
+      "input_tokens": 1408636,
+      "output_tokens": 49433,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 866,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    },
+    "eager": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 0,
+      "model_calls": 106,
+      "worker_calls": 0,
+      "input_tokens": 1873496,
+      "output_tokens": 48870,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 854,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    },
+    "skills": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 0,
+      "model_calls": 109,
+      "worker_calls": 0,
+      "input_tokens": 1549564,
+      "output_tokens": 51755,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 948,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    },
+    "multi": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 6,
+      "model_calls": 153,
+      "worker_calls": 42,
+      "input_tokens": 2017616,
+      "output_tokens": 64237,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 935,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    }
+  },
+  "after_timeout_policy_cumulative_cost": {
+    "tools": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 0,
+      "model_calls": 107,
+      "worker_calls": 0,
+      "input_tokens": 1408636,
+      "output_tokens": 49433,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 866,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    },
+    "eager": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 0,
+      "model_calls": 106,
+      "worker_calls": 0,
+      "input_tokens": 1873496,
+      "output_tokens": 48870,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 854,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    },
+    "skills": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 0,
+      "model_calls": 109,
+      "worker_calls": 0,
+      "input_tokens": 1549564,
+      "output_tokens": 51755,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 948,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    },
+    "multi": {
+      "assigned": 24,
+      "verified_trials": 24,
+      "delivered": 24,
+      "passed": 24,
+      "feasible": 24,
+      "optimal": 24,
+      "pass_rate_all_assigned": 1.0,
+      "delivery_rate_all_assigned": 1.0,
+      "transport_timeouts_in_charged_attempts": 0,
+      "service_faults_in_charged_attempts": 0,
+      "delegated_outcome_trials": 6,
+      "model_calls": 153,
+      "worker_calls": 42,
+      "input_tokens": 2017616,
+      "output_tokens": 64237,
+      "unknown_usage_requests": 0,
+      "quotes_repriced": 935,
+      "audit_records_checked": 6,
+      "host_finalizations": 24
+    }
+  },
+  "trials": [
+    {
+      "task": "FH-A01",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 73517,
+          "output_tokens": 484,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 73509,
+          "output_tokens": 465,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 49446,
+          "output_tokens": 523,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 49464,
+          "output_tokens": 460,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 48854,
+          "output_tokens": 487,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 48914,
+          "output_tokens": 472,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 46855,
+          "output_tokens": 471,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A01",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 46863,
+          "output_tokens": 480,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57851,
+          "output_tokens": 546,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57867,
+          "output_tokens": 562,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 56930,
+          "output_tokens": 549,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 56906,
+          "output_tokens": 556,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 56388,
+          "output_tokens": 632,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 56394,
+          "output_tokens": 561,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 55115,
+          "output_tokens": 571,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A02",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 55097,
+          "output_tokens": 551,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 81769,
+          "output_tokens": 529,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 81783,
+          "output_tokens": 536,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57644,
+          "output_tokens": 540,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57658,
+          "output_tokens": 540,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57120,
+          "output_tokens": 570,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57104,
+          "output_tokens": 545,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 55093,
+          "output_tokens": 522,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-A03",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 55123,
+          "output_tokens": 532,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 0,
+          "audit_records_checked": 1,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34241,
+          "output_tokens": 928,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34246,
+          "output_tokens": 962,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 33650,
+          "output_tokens": 953,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 33626,
+          "output_tokens": 951,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32881,
+          "output_tokens": 947,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32905,
+          "output_tokens": 940,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 31395,
+          "output_tokens": 968,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P01",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 31481,
+          "output_tokens": 961,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 59219,
+          "output_tokens": 1028,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 54,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 60568,
+          "output_tokens": 1162,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 54,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 37016,
+          "output_tokens": 1173,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 54,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 4,
+          "main_calls": 4,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 42130,
+          "output_tokens": 1246,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 16,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34918,
+          "output_tokens": 1085,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 54,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 36293,
+          "output_tokens": 1216,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 54,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32747,
+          "output_tokens": 1067,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 54,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P02",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 28372,
+          "output_tokens": 1557,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 24,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 35336,
+          "output_tokens": 1062,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 35354,
+          "output_tokens": 1077,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34744,
+          "output_tokens": 1113,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34799,
+          "output_tokens": 1054,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34000,
+          "output_tokens": 1080,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 34029,
+          "output_tokens": 1098,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32585,
+          "output_tokens": 1098,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P03",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32591,
+          "output_tokens": 1095,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 56317,
+          "output_tokens": 1657,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 28,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 56525,
+          "output_tokens": 1889,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 29,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32463,
+          "output_tokens": 1679,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 28,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 32744,
+          "output_tokens": 1896,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 29,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 44135,
+          "output_tokens": 2303,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 105,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 4,
+          "main_calls": 4,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 46130,
+          "output_tokens": 1915,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 29,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 29681,
+          "output_tokens": 1931,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 28,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P04",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 41915,
+          "output_tokens": 2188,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 105,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 5,
+          "main_calls": 5,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 66174,
+          "output_tokens": 4559,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 4,
+          "main_calls": 4,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 47140,
+          "output_tokens": 4868,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 29,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 14,
+          "main_calls": 6,
+          "worker_calls": 8,
+          "worker_count": 2,
+          "input_tokens": 190125,
+          "output_tokens": 8467,
+          "unknown_usage_requests": 0,
+          "actual_topology": "delegated",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {
+            "worker-A": 4,
+            "worker-B": 4
+          },
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 113,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 13,
+          "main_calls": 5,
+          "worker_calls": 8,
+          "worker_count": 2,
+          "input_tokens": 145770,
+          "output_tokens": 6875,
+          "unknown_usage_requests": 0,
+          "actual_topology": "delegated",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {
+            "worker-A": 4,
+            "worker-B": 4
+          },
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 62,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 4,
+          "main_calls": 4,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 46037,
+          "output_tokens": 3783,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 32,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 5,
+          "main_calls": 5,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 63259,
+          "output_tokens": 3950,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 40,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 4,
+          "main_calls": 4,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 44168,
+          "output_tokens": 3652,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 32,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P05",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 4,
+          "main_calls": 4,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 43237,
+          "output_tokens": 4669,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 23,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 3,
+          "main_calls": 3,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 58109,
+          "output_tokens": 3079,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 32,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 5,
+          "main_calls": 5,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 117236,
+          "output_tokens": 4967,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 73,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 12,
+          "main_calls": 4,
+          "worker_calls": 8,
+          "worker_count": 2,
+          "input_tokens": 133935,
+          "output_tokens": 5630,
+          "unknown_usage_requests": 0,
+          "actual_topology": "delegated",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {
+            "worker-B": 4,
+            "worker-A": 4
+          },
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 62,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 10,
+          "main_calls": 3,
+          "worker_calls": 7,
+          "worker_count": 2,
+          "input_tokens": 104037,
+          "output_tokens": 5407,
+          "unknown_usage_requests": 0,
+          "actual_topology": "delegated",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {
+            "worker-B": 4,
+            "worker-A": 3
+          },
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 47,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 5,
+          "main_calls": 5,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 71208,
+          "output_tokens": 4480,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 65,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 5,
+          "main_calls": 5,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 57866,
+          "output_tokens": 5265,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 26,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 6,
+          "main_calls": 6,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 83867,
+          "output_tokens": 5524,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 67,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-P06",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 5,
+          "main_calls": 5,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 58901,
+          "output_tokens": 4603,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 45,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 86530,
+          "output_tokens": 1835,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 33,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 86884,
+          "output_tokens": 1814,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 33,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 89020,
+          "output_tokens": 2228,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 50,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 109730,
+          "output_tokens": 1985,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 78,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 107955,
+          "output_tokens": 2019,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 78,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 105325,
+          "output_tokens": 2211,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 62,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 101828,
+          "output_tokens": 1785,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 62,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R01",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 104367,
+          "output_tokens": 1966,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 78,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 148610,
+          "output_tokens": 2344,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 48,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 8,
+          "main_calls": 8,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 177947,
+          "output_tokens": 2693,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 60,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 8,
+          "main_calls": 8,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 112553,
+          "output_tokens": 2261,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 41,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 8,
+          "main_calls": 8,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 108557,
+          "output_tokens": 2278,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 35,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 91227,
+          "output_tokens": 1962,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 33,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 8,
+          "main_calls": 8,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 113797,
+          "output_tokens": 2718,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 57,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 77359,
+          "output_tokens": 1416,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 20,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R02",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 7,
+          "main_calls": 7,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 79963,
+          "output_tokens": 1880,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 36,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "eager",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 8,
+          "main_calls": 8,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 117228,
+          "output_tokens": 4337,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 61,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "eager",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 10,
+          "main_calls": 10,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 169536,
+          "output_tokens": 5487,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 86,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "multi",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 14,
+          "main_calls": 8,
+          "worker_calls": 6,
+          "worker_count": 2,
+          "input_tokens": 166683,
+          "output_tokens": 6916,
+          "unknown_usage_requests": 0,
+          "actual_topology": "delegated",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {
+            "worker-B": 3,
+            "worker-A": 3
+          },
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 65,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "multi",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 17,
+          "main_calls": 12,
+          "worker_calls": 5,
+          "worker_count": 1,
+          "input_tokens": 247986,
+          "output_tokens": 8957,
+          "unknown_usage_requests": 0,
+          "actual_topology": "delegated",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {
+            "worker-B": 5
+          },
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 69,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "skills",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 9,
+          "main_calls": 9,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 136265,
+          "output_tokens": 5695,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 62,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "skills",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 9,
+          "main_calls": 9,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 136560,
+          "output_tokens": 5821,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 65,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "tools",
+      "rep": 0,
+      "attempts": [
+        {
+          "model_calls": 9,
+          "main_calls": 9,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 117663,
+          "output_tokens": 5563,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 50,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    },
+    {
+      "task": "FH-R03",
+      "method": "tools",
+      "rep": 1,
+      "attempts": [
+        {
+          "model_calls": 9,
+          "main_calls": 9,
+          "worker_calls": 0,
+          "worker_count": 0,
+          "input_tokens": 122370,
+          "output_tokens": 4383,
+          "unknown_usage_requests": 0,
+          "actual_topology": "single",
+          "transport_timeout": false,
+          "service_error": null,
+          "worker_role_calls": {},
+          "delivered": true,
+          "passed": true,
+          "feasible": true,
+          "optimal": true,
+          "quotes_repriced": 56,
+          "audit_records_checked": 0,
+          "host_finalizations": 1,
+          "failures": [],
+          "error": null
+        }
+      ]
+    }
+  ],
+  "issues": [],
+  "diagnostic_counts": {},
+  "limits": [
+    "Known tokens are CLI telemetry, not a service-side bill; unknown usage remains unknown.",
+    "Worker calls prove separate model contexts ran, not that delegation caused the outcome.",
+    "Grades concern final synthetic delivery, not interim reasoning or natural-language quality.",
+    "Per-request start IDs are not stored in usage.jsonl: match intent/finish IDs and role totals, then match numbered requests, stdout and usage independently."
+  ]
+}

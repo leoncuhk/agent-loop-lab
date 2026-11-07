@@ -1,0 +1,136 @@
+{
+  "purpose": "Counterfactual tool-interface replay of known candidates; not a new model run",
+  "old_tools": {
+    "selected_ids": [
+      "B1",
+      "C5",
+      "T5"
+    ],
+    "cash_cents": 9830,
+    "utility": 164,
+    "policy_version": "purchase-Q4-7",
+    "request_revision": 0
+  },
+  "old_eager": {
+    "selected_ids": [
+      "B3",
+      "C4",
+      "T5"
+    ],
+    "cash_cents": 9830,
+    "utility": 169,
+    "policy_version": "purchase-Q4-7",
+    "request_revision": 0
+  },
+  "quoted_candidates": [
+    {
+      "selected_ids": [
+        "B1",
+        "C5",
+        "T5"
+      ],
+      "cash_cents": 9830,
+      "utility": 164,
+      "feasible": true,
+      "errors": [],
+      "quote_id": "Q-c0e57feade335791ae6d",
+      "policy_version": "purchase-Q4-7"
+    },
+    {
+      "selected_ids": [
+        "B2",
+        "C6",
+        "T2"
+      ],
+      "cash_cents": 9958,
+      "utility": 168,
+      "feasible": true,
+      "errors": [],
+      "quote_id": "Q-7912a80920a478db5fcf",
+      "policy_version": "purchase-Q4-7"
+    },
+    {
+      "selected_ids": [
+        "B3",
+        "C4",
+        "T5"
+      ],
+      "cash_cents": 10222,
+      "utility": 169,
+      "feasible": false,
+      "errors": [
+        "cash_budget"
+      ],
+      "quote_id": "Q-77b7b5c5f20e4cc0e9c7",
+      "policy_version": "purchase-Q4-7"
+    }
+  ],
+  "best_among_these_only": {
+    "selected_ids": [
+      "B2",
+      "C6",
+      "T2"
+    ],
+    "cash_cents": 9958,
+    "utility": 168,
+    "feasible": true,
+    "errors": [],
+    "quote_id": "Q-7912a80920a478db5fcf",
+    "policy_version": "purchase-Q4-7"
+  },
+  "weaker_quote_submission": {
+    "error": "better_evaluated_quote",
+    "best": {
+      "selected_ids": [
+        "B2",
+        "C6",
+        "T2"
+      ],
+      "cash_cents": 9958,
+      "utility": 168,
+      "feasible": true,
+      "errors": [],
+      "quote_id": "Q-7912a80920a478db5fcf",
+      "policy_version": "purchase-Q4-7"
+    }
+  },
+  "over_budget_submission": {
+    "error": "infeasible_quote",
+    "reasons": [
+      "cash_budget"
+    ]
+  },
+  "submitted_best": {
+    "status": "completed",
+    "facts": [
+      {
+        "key": "selected_ids",
+        "value": "[\"B2\", \"C6\", \"T2\"]",
+        "source": "DRAFT-known-P2-0"
+      },
+      {
+        "key": "cash_cents",
+        "value": "9958",
+        "source": "DRAFT-known-P2-0"
+      },
+      {
+        "key": "utility",
+        "value": "168",
+        "source": "DRAFT-known-P2-0"
+      },
+      {
+        "key": "policy_version",
+        "value": "purchase-Q4-7",
+        "source": "DRAFT-known-P2-0"
+      },
+      {
+        "key": "request_revision",
+        "value": "0",
+        "source": "DRAFT-known-P2-0"
+      }
+    ],
+    "receipt_ids": [
+      "DRAFT-known-P2-0"
+    ]
+  }
+}
