@@ -1,0 +1,81 @@
+{
+  "source_sha256": "6e94f5058953b3c24be21b987bf85ff3af484871872f97b73f6d10c4eb14acb3",
+  "script_at_launch": "0f6ed9d58182943355d2156f6bc1b5d9c529482ec1f5bed4d3c405080049fb5e",
+  "cells": [
+    {
+      "case": "sales",
+      "mode": "skill",
+      "passed": true,
+      "calls_made": [
+        "load_skill"
+      ],
+      "model_calls": 2,
+      "initial_schema_absent": true,
+      "retrieved_domains": [
+        "sales_analytics"
+      ]
+    },
+    {
+      "case": "sales",
+      "mode": "no_source",
+      "passed": false,
+      "calls_made": [],
+      "model_calls": 1,
+      "initial_schema_absent": true,
+      "retrieved_domains": []
+    },
+    {
+      "case": "sales",
+      "mode": "dictionary",
+      "passed": true,
+      "calls_made": [
+        "lookup_dictionary"
+      ],
+      "model_calls": 2,
+      "initial_schema_absent": true,
+      "retrieved_domains": [
+        "sales_analytics"
+      ]
+    },
+    {
+      "case": "stock",
+      "mode": "dictionary",
+      "passed": true,
+      "calls_made": [
+        "lookup_dictionary"
+      ],
+      "model_calls": 2,
+      "initial_schema_absent": true,
+      "retrieved_domains": [
+        "inventory_management"
+      ]
+    },
+    {
+      "case": "stock",
+      "mode": "no_source",
+      "passed": false,
+      "calls_made": [],
+      "model_calls": 1,
+      "initial_schema_absent": true,
+      "retrieved_domains": []
+    },
+    {
+      "case": "stock",
+      "mode": "skill",
+      "passed": true,
+      "calls_made": [
+        "load_skill"
+      ],
+      "model_calls": 2,
+      "initial_schema_absent": true,
+      "retrieved_domains": [
+        "inventory_management"
+      ]
+    }
+  ],
+  "usage": {
+    "input_tokens": 64963,
+    "cached_input_tokens": 33792,
+    "output_tokens": 677
+  }
+}

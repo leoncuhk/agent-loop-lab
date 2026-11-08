@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "launch_git_commit": "3e77b654bb5030591c8e4f791240792e43be393d",
+  "recorded_launch_sha256_verified": {
+    "model_bridge.py": "6176ef279e66f5b455350e46330fa534888ddad69d89a48504aa5a7096616669",
+    "aidless/live.py": "24c6d38f444d0d8c177e7a76ff0d699427daa962dcd9f0812cd612dba837e05f",
+    "kit/panel.py": "7a4dd72867cb83645338b63a6e7591ad6c9b802b519c7853106922139e871c46",
+    "kit/native_live.py": "90ec0b2ba73ed0c192e4f4819a9bef5600b799077565bae3f57914bedb50da62",
+    "haty/panel.py": "ce3298f720434205f94294f4bf4188c7cd1ff2b19fdbd2e9692962d5da9ed387",
+    "langchain-reference/probe.py": "0f6ed9d58182943355d2156f6bc1b5d9c529482ec1f5bed4d3c405080049fb5e"
+  },
+  "request_counts": {
+    "kit": {
+      "calls": 83,
+      "input_tokens": 557419,
+      "cached_input_tokens": 219648,
+      "output_tokens": 5048
+    },
+    "haty": {
+      "calls": 102,
+      "input_tokens": 752711,
+      "cached_input_tokens": 346368,
+      "output_tokens": 9719
+    },
+    "commerce": {
+      "calls": 6,
+      "input_tokens": 90552,
+      "cached_input_tokens": 4224,
+      "output_tokens": 408
+    },
+    "aidless": {
+      "calls": 38,
+      "input_tokens": 250356,
+      "cached_input_tokens": 130944,
+      "output_tokens": 1417
+    },
+    "langchain-reference": {
+      "calls": 10,
+      "input_tokens": 64963,
+      "cached_input_tokens": 33792,
+      "output_tokens": 677
+    },
+    "bridge-probe": {
+      "calls": 1,
+      "input_tokens": 6140,
+      "cached_input_tokens": 0,
+      "output_tokens": 18
+    }
+  },
+  "four_project_model_calls": 229,
+  "supplement_sql_model_calls": 10,
+  "separate_transport_probe": 1
+}

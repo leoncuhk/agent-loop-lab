@@ -1,0 +1,564 @@
+{
+  "source": "upstream rounded CSV rows vs upstream summary JSON; no raw run logs",
+  "main": {
+    "A_multi": {
+      "success": 34,
+      "det_pass": 36,
+      "grader_pass": 34,
+      "n": 36,
+      "latency_s_mean_from_rounded_csv": 13.495,
+      "api_calls_mean_from_rounded_csv": 7.166666666666667,
+      "cost_usd_mean_from_rounded_csv": 0.024082222222222224,
+      "cost_nocache_usd_mean_from_rounded_csv": 0.03727111111111111,
+      "failed_cells": [
+        "T04-r0",
+        "T09-r2"
+      ]
+    },
+    "B_single": {
+      "success": 35,
+      "det_pass": 36,
+      "grader_pass": 35,
+      "n": 36,
+      "latency_s_mean_from_rounded_csv": 6.304722222222222,
+      "api_calls_mean_from_rounded_csv": 3.5277777777777777,
+      "cost_usd_mean_from_rounded_csv": 0.009320555555555556,
+      "cost_nocache_usd_mean_from_rounded_csv": 0.022211944444444444,
+      "failed_cells": [
+        "T09-r1"
+      ]
+    }
+  },
+  "ext_counts": {
+    "serial": 24,
+    "a2": 18,
+    "hard": 25,
+    "a1": 6
+  },
+  "ext": {
+    "serial": {
+      "A/T01": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          6
+        ],
+        "routes": [
+          "shipping"
+        ]
+      },
+      "A/T02": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          6
+        ],
+        "routes": [
+          "shipping"
+        ]
+      },
+      "A/T03": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          10
+        ],
+        "routes": [
+          "returns|shipping"
+        ]
+      },
+      "A/T04": {
+        "n": 1,
+        "success": 0,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          6
+        ],
+        "routes": [
+          "returns"
+        ]
+      },
+      "A/T05": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          10
+        ],
+        "routes": [
+          "shipping|returns"
+        ]
+      },
+      "A/T06": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "products"
+        ]
+      },
+      "A/T07": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          5
+        ],
+        "routes": [
+          "account"
+        ]
+      },
+      "A/T08": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          6
+        ],
+        "routes": [
+          "orders|shipping"
+        ]
+      },
+      "A/T09": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          5
+        ],
+        "routes": [
+          "returns"
+        ]
+      },
+      "A/T10": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          9
+        ],
+        "routes": [
+          "shipping|products"
+        ]
+      },
+      "A/T11": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          9
+        ],
+        "routes": [
+          "returns|shipping"
+        ]
+      },
+      "A/T12": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          5
+        ],
+        "routes": [
+          "shipping"
+        ]
+      },
+      "B/T01": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "orders"
+        ]
+      },
+      "B/T02": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          5
+        ],
+        "routes": [
+          "shipping|orders"
+        ]
+      },
+      "B/T03": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "orders|returns"
+        ]
+      },
+      "B/T04": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "returns|orders"
+        ]
+      },
+      "B/T05": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "orders|shipping|returns"
+        ]
+      },
+      "B/T06": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          2
+        ],
+        "routes": [
+          "products"
+        ]
+      },
+      "B/T07": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          3
+        ],
+        "routes": [
+          "account"
+        ]
+      },
+      "B/T08": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          2
+        ],
+        "routes": [
+          "orders|shipping"
+        ]
+      },
+      "B/T09": {
+        "n": 1,
+        "success": 0,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "returns|orders"
+        ]
+      },
+      "B/T10": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "shipping|orders|products"
+        ]
+      },
+      "B/T11": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 1,
+        "calls": [
+          4
+        ],
+        "routes": [
+          "orders|returns"
+        ]
+      },
+      "B/T12": {
+        "n": 1,
+        "success": 1,
+        "det_pass": 1,
+        "called_get_shipment": 0,
+        "calls": [
+          3
+        ],
+        "routes": [
+          "shipping|orders"
+        ]
+      }
+    },
+    "a1": {
+      "A1/T03": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          10,
+          10,
+          10
+        ],
+        "routes": [
+          "returns|shipping",
+          "returns|shipping",
+          "returns|shipping"
+        ]
+      },
+      "A1/T04": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          6,
+          6,
+          6
+        ],
+        "routes": [
+          "returns",
+          "returns",
+          "returns"
+        ]
+      }
+    },
+    "a2": {
+      "A2/T02": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          6,
+          7,
+          12
+        ],
+        "routes": [
+          "shipping",
+          "shipping",
+          "shipping|shipping"
+        ]
+      },
+      "A2/T03": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          11,
+          10,
+          11
+        ],
+        "routes": [
+          "shipping|returns",
+          "shipping|returns",
+          "shipping|returns"
+        ]
+      },
+      "A2/T04": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          9,
+          11,
+          10
+        ],
+        "routes": [
+          "returns|shipping",
+          "returns|shipping",
+          "returns|shipping"
+        ]
+      },
+      "A2/T05": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          10,
+          11,
+          11
+        ],
+        "routes": [
+          "shipping|returns",
+          "shipping|returns",
+          "shipping|returns"
+        ]
+      },
+      "A2/T10": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          11,
+          10,
+          10
+        ],
+        "routes": [
+          "shipping|products",
+          "shipping|products",
+          "shipping|products"
+        ]
+      },
+      "A2/T11": {
+        "n": 3,
+        "success": 3,
+        "det_pass": 3,
+        "called_get_shipment": 3,
+        "calls": [
+          9,
+          11,
+          10
+        ],
+        "routes": [
+          "returns|shipping",
+          "returns|shipping",
+          "returns|shipping"
+        ]
+      }
+    },
+    "hard": {
+      "A/T02": {
+        "n": 5,
+        "success": null,
+        "det_pass": 5,
+        "called_get_shipment": 5,
+        "calls": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "routes": [
+          "shipping",
+          "shipping",
+          "shipping",
+          "shipping",
+          "shipping"
+        ]
+      },
+      "A2/T02": {
+        "n": 5,
+        "success": null,
+        "det_pass": 5,
+        "called_get_shipment": 5,
+        "calls": [
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "routes": [
+          "shipping",
+          "shipping",
+          "shipping",
+          "shipping",
+          "shipping"
+        ]
+      },
+      "A2/T03": {
+        "n": 5,
+        "success": null,
+        "det_pass": 5,
+        "called_get_shipment": 5,
+        "calls": [
+          11,
+          11,
+          11,
+          11,
+          11
+        ],
+        "routes": [
+          "shipping|returns",
+          "shipping|returns",
+          "shipping|returns",
+          "shipping|returns",
+          "shipping|returns"
+        ]
+      },
+      "B/T02": {
+        "n": 5,
+        "success": null,
+        "det_pass": 5,
+        "called_get_shipment": 5,
+        "calls": [
+          4,
+          5,
+          4,
+          4,
+          5
+        ],
+        "routes": [
+          "shipping|orders",
+          "shipping|orders",
+          "orders|shipping",
+          "shipping|orders",
+          "shipping|orders"
+        ]
+      },
+      "B/T03": {
+        "n": 5,
+        "success": null,
+        "det_pass": 5,
+        "called_get_shipment": 5,
+        "calls": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "routes": [
+          "returns|orders",
+          "orders|returns",
+          "returns|orders",
+          "returns|orders",
+          "returns|orders"
+        ]
+      }
+    }
+  }
+}

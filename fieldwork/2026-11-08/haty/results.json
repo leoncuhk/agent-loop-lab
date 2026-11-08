@@ -1,0 +1,1209 @@
+{
+  "n": 18,
+  "n_planned": 18,
+  "source_matches_launch": true,
+  "source_sha": "d8a1d8183c72c50ec1a8bb289c308ed8fd1d54d5",
+  "groups": {
+    "A": {
+      "n": 6,
+      "upstream_det_pass": 6,
+      "local_strict_pass": 5,
+      "all_required_evidence": 6,
+      "model_calls": 42,
+      "cli_input_incl_cache": 302824,
+      "cli_output": 4657,
+      "cli_cache_read": 143616,
+      "summed_wall_sec": 518.941,
+      "calls_by_task": {
+        "T03": [
+          10,
+          14
+        ],
+        "T04": [
+          5,
+          5
+        ],
+        "T06": [
+          4,
+          4
+        ]
+      }
+    },
+    "A1": {
+      "n": 6,
+      "upstream_det_pass": 6,
+      "local_strict_pass": 2,
+      "all_required_evidence": 6,
+      "model_calls": 32,
+      "cli_input_incl_cache": 231779,
+      "cli_output": 3372,
+      "cli_cache_read": 97152,
+      "summed_wall_sec": 396.472,
+      "calls_by_task": {
+        "T03": [
+          6,
+          6
+        ],
+        "T04": [
+          6,
+          6
+        ],
+        "T06": [
+          4,
+          4
+        ]
+      }
+    },
+    "B": {
+      "n": 6,
+      "upstream_det_pass": 6,
+      "local_strict_pass": 6,
+      "all_required_evidence": 6,
+      "model_calls": 28,
+      "cli_input_incl_cache": 218108,
+      "cli_output": 1690,
+      "cli_cache_read": 105600,
+      "summed_wall_sec": 306.056,
+      "calls_by_task": {
+        "T03": [
+          5,
+          5
+        ],
+        "T04": [
+          6,
+          6
+        ],
+        "T06": [
+          3,
+          3
+        ]
+      }
+    }
+  },
+  "cells": [
+    {
+      "cell": "r1-T03-A",
+      "task": "T03",
+      "rep": 1,
+      "arch": "A",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "eligible": true,
+        "unworn": true,
+        "tags": true,
+        "delivered_date": true,
+        "deadline": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "shipment_delivered_date": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": []
+      },
+      "local_pass": true,
+      "routes": [
+        "returns",
+        "shipping"
+      ],
+      "skills": [],
+      "calls": 10,
+      "attempts": 10,
+      "business_tool_counts": {
+        "verify_customer": 2,
+        "get_order": 2,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "sub:shipping"
+      ],
+      "usage_input_excluding_cache": 55811,
+      "usage_cache_read": 16896,
+      "usage_input": 72707,
+      "usage_output": 1120,
+      "wall_sec": 123.462,
+      "receipt_count": 10,
+      "receipt_status_counts": {
+        "ok": 10
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 2,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T04-A1",
+      "task": "T04",
+      "rep": 1,
+      "arch": "A1",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "opened": true,
+        "refusal": true,
+        "unopened_condition": true,
+        "14_day_rule": false
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "specific_date_grounded": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": [],
+        "specific_deadline_correct": true,
+        "shipping_returned": true
+      },
+      "local_pass": false,
+      "routes": [
+        "returns"
+      ],
+      "skills": [],
+      "calls": 6,
+      "attempts": 6,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "sub:returns"
+      ],
+      "usage_input_excluding_cache": 40072,
+      "usage_cache_read": 4224,
+      "usage_input": 44296,
+      "usage_output": 676,
+      "wall_sec": 78.264,
+      "receipt_count": 6,
+      "receipt_status_counts": {
+        "ok": 6
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {
+          "14_day_rule": [
+            "returns"
+          ]
+        },
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T06-B",
+      "task": "T06",
+      "rep": 1,
+      "arch": "B",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "black_zero": true,
+        "restock_date": true,
+        "white_alternative_12": true
+      },
+      "evidence": {
+        "black_record": true,
+        "white_record": true
+      },
+      "supplemental": {},
+      "local_pass": true,
+      "routes": [],
+      "skills": [
+        "products"
+      ],
+      "calls": 3,
+      "attempts": 3,
+      "business_tool_counts": {
+        "check_inventory": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 8854,
+      "usage_cache_read": 12672,
+      "usage_input": 21526,
+      "usage_output": 130,
+      "wall_sec": 31.991,
+      "receipt_count": 3,
+      "receipt_status_counts": {
+        "ok": 3
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 1,
+        "handoff_results_in_orchestrator": 0,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T03-A1",
+      "task": "T03",
+      "rep": 1,
+      "arch": "A1",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "eligible": true,
+        "unworn": true,
+        "tags": true,
+        "delivered_date": false,
+        "deadline": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "shipment_delivered_date": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": []
+      },
+      "local_pass": false,
+      "routes": [
+        "returns"
+      ],
+      "skills": [],
+      "calls": 6,
+      "attempts": 6,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "sub:returns"
+      ],
+      "usage_input_excluding_cache": 27433,
+      "usage_cache_read": 16896,
+      "usage_input": 44329,
+      "usage_output": 673,
+      "wall_sec": 70.616,
+      "receipt_count": 6,
+      "receipt_status_counts": {
+        "ok": 6
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {
+          "delivered_date": [
+            "returns"
+          ]
+        },
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T04-B",
+      "task": "T04",
+      "rep": 1,
+      "arch": "B",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "opened": true,
+        "refusal": true,
+        "unopened_condition": true,
+        "14_day_rule": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "specific_date_grounded": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": [],
+        "specific_deadline_correct": true,
+        "shipping_returned": true
+      },
+      "local_pass": true,
+      "routes": [],
+      "skills": [
+        "orders",
+        "returns",
+        "shipping"
+      ],
+      "calls": 6,
+      "attempts": 6,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "main"
+      ],
+      "usage_input_excluding_cache": 22342,
+      "usage_cache_read": 25344,
+      "usage_input": 47686,
+      "usage_output": 361,
+      "wall_sec": 65.024,
+      "receipt_count": 6,
+      "receipt_status_counts": {
+        "ok": 6
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 4,
+        "handoff_results_in_orchestrator": 0,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T06-A",
+      "task": "T06",
+      "rep": 1,
+      "arch": "A",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "black_zero": true,
+        "restock_date": true,
+        "white_alternative_12": true
+      },
+      "evidence": {
+        "black_record": true,
+        "white_record": true
+      },
+      "supplemental": {},
+      "local_pass": true,
+      "routes": [
+        "products"
+      ],
+      "skills": [],
+      "calls": 4,
+      "attempts": 4,
+      "business_tool_counts": {
+        "check_inventory": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 10495,
+      "usage_cache_read": 16896,
+      "usage_input": 27391,
+      "usage_output": 258,
+      "wall_sec": 48.765,
+      "receipt_count": 4,
+      "receipt_status_counts": {
+        "ok": 4
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T03-B",
+      "task": "T03",
+      "rep": 1,
+      "arch": "B",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "eligible": true,
+        "unworn": true,
+        "tags": true,
+        "delivered_date": true,
+        "deadline": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "shipment_delivered_date": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": []
+      },
+      "local_pass": true,
+      "routes": [],
+      "skills": [
+        "orders",
+        "returns",
+        "shipping"
+      ],
+      "calls": 5,
+      "attempts": 5,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "main"
+      ],
+      "usage_input_excluding_cache": 22950,
+      "usage_cache_read": 16896,
+      "usage_input": 39846,
+      "usage_output": 328,
+      "wall_sec": 57.409,
+      "receipt_count": 5,
+      "receipt_status_counts": {
+        "ok": 5
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 4,
+        "handoff_results_in_orchestrator": 0,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T04-A",
+      "task": "T04",
+      "rep": 1,
+      "arch": "A",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "opened": true,
+        "refusal": true,
+        "unopened_condition": true,
+        "14_day_rule": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": [],
+        "specific_deadline_correct": false,
+        "shipping_returned": false
+      },
+      "local_pass": true,
+      "routes": [
+        "returns"
+      ],
+      "skills": [],
+      "calls": 5,
+      "attempts": 5,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 19417,
+      "usage_cache_read": 16896,
+      "usage_input": 36313,
+      "usage_output": 734,
+      "wall_sec": 64.39,
+      "receipt_count": 5,
+      "receipt_status_counts": {
+        "ok": 5
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r1-T06-A1",
+      "task": "T06",
+      "rep": 1,
+      "arch": "A1",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "black_zero": true,
+        "restock_date": true,
+        "white_alternative_12": true
+      },
+      "evidence": {
+        "black_record": true,
+        "white_record": true
+      },
+      "supplemental": {},
+      "local_pass": true,
+      "routes": [
+        "products"
+      ],
+      "skills": [],
+      "calls": 4,
+      "attempts": 4,
+      "business_tool_counts": {
+        "check_inventory": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 10466,
+      "usage_cache_read": 16896,
+      "usage_input": 27362,
+      "usage_output": 251,
+      "wall_sec": 45.268,
+      "receipt_count": 4,
+      "receipt_status_counts": {
+        "ok": 4
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T06-A1",
+      "task": "T06",
+      "rep": 2,
+      "arch": "A1",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "black_zero": true,
+        "restock_date": true,
+        "white_alternative_12": true
+      },
+      "evidence": {
+        "black_record": true,
+        "white_record": true
+      },
+      "supplemental": {},
+      "local_pass": true,
+      "routes": [
+        "products"
+      ],
+      "skills": [],
+      "calls": 4,
+      "attempts": 4,
+      "business_tool_counts": {
+        "check_inventory": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 10552,
+      "usage_cache_read": 16896,
+      "usage_input": 27448,
+      "usage_output": 283,
+      "wall_sec": 44.581,
+      "receipt_count": 4,
+      "receipt_status_counts": {
+        "ok": 4
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T04-A",
+      "task": "T04",
+      "rep": 2,
+      "arch": "A",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "opened": true,
+        "refusal": true,
+        "unopened_condition": false,
+        "14_day_rule": false
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": [],
+        "specific_deadline_correct": false,
+        "shipping_returned": false
+      },
+      "local_pass": false,
+      "routes": [
+        "returns"
+      ],
+      "skills": [],
+      "calls": 5,
+      "attempts": 5,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 15184,
+      "usage_cache_read": 21120,
+      "usage_input": 36304,
+      "usage_output": 673,
+      "wall_sec": 60.515,
+      "receipt_count": 5,
+      "receipt_status_counts": {
+        "ok": 5
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {
+          "unopened_condition": [
+            "returns"
+          ],
+          "14_day_rule": [
+            "returns"
+          ]
+        },
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T03-B",
+      "task": "T03",
+      "rep": 2,
+      "arch": "B",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "eligible": true,
+        "unworn": true,
+        "tags": true,
+        "delivered_date": true,
+        "deadline": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "shipment_delivered_date": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": []
+      },
+      "local_pass": true,
+      "routes": [],
+      "skills": [
+        "orders",
+        "returns",
+        "shipping"
+      ],
+      "calls": 5,
+      "attempts": 5,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "main"
+      ],
+      "usage_input_excluding_cache": 27222,
+      "usage_cache_read": 12672,
+      "usage_input": 39894,
+      "usage_output": 342,
+      "wall_sec": 56.219,
+      "receipt_count": 5,
+      "receipt_status_counts": {
+        "ok": 5
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 4,
+        "handoff_results_in_orchestrator": 0,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T06-A",
+      "task": "T06",
+      "rep": 2,
+      "arch": "A",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "black_zero": true,
+        "restock_date": true,
+        "white_alternative_12": true
+      },
+      "evidence": {
+        "black_record": true,
+        "white_record": true
+      },
+      "supplemental": {},
+      "local_pass": true,
+      "routes": [
+        "products"
+      ],
+      "skills": [],
+      "calls": 4,
+      "attempts": 4,
+      "business_tool_counts": {
+        "check_inventory": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 10482,
+      "usage_cache_read": 16896,
+      "usage_input": 27378,
+      "usage_output": 259,
+      "wall_sec": 52.295,
+      "receipt_count": 4,
+      "receipt_status_counts": {
+        "ok": 4
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T04-B",
+      "task": "T04",
+      "rep": 2,
+      "arch": "B",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "opened": true,
+        "refusal": true,
+        "unopened_condition": true,
+        "14_day_rule": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "specific_date_grounded": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": [],
+        "specific_deadline_correct": true,
+        "shipping_returned": true
+      },
+      "local_pass": true,
+      "routes": [],
+      "skills": [
+        "orders",
+        "returns",
+        "shipping"
+      ],
+      "calls": 6,
+      "attempts": 6,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "main"
+      ],
+      "usage_input_excluding_cache": 22286,
+      "usage_cache_read": 25344,
+      "usage_input": 47630,
+      "usage_output": 390,
+      "wall_sec": 64.135,
+      "receipt_count": 6,
+      "receipt_status_counts": {
+        "ok": 6
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 4,
+        "handoff_results_in_orchestrator": 0,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T03-A1",
+      "task": "T03",
+      "rep": 2,
+      "arch": "A1",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "eligible": true,
+        "unworn": true,
+        "tags": true,
+        "delivered_date": false,
+        "deadline": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "shipment_delivered_date": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": []
+      },
+      "local_pass": false,
+      "routes": [
+        "returns"
+      ],
+      "skills": [],
+      "calls": 6,
+      "attempts": 6,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "sub:returns"
+      ],
+      "usage_input_excluding_cache": 23107,
+      "usage_cache_read": 21120,
+      "usage_input": 44227,
+      "usage_output": 745,
+      "wall_sec": 85.749,
+      "receipt_count": 6,
+      "receipt_status_counts": {
+        "ok": 6
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {
+          "delivered_date": [
+            "returns"
+          ]
+        },
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T06-B",
+      "task": "T06",
+      "rep": 2,
+      "arch": "B",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "black_zero": true,
+        "restock_date": true,
+        "white_alternative_12": true
+      },
+      "evidence": {
+        "black_record": true,
+        "white_record": true
+      },
+      "supplemental": {},
+      "local_pass": true,
+      "routes": [],
+      "skills": [
+        "products"
+      ],
+      "calls": 3,
+      "attempts": 3,
+      "business_tool_counts": {
+        "check_inventory": 1
+      },
+      "shipping_actors": [],
+      "usage_input_excluding_cache": 8854,
+      "usage_cache_read": 12672,
+      "usage_input": 21526,
+      "usage_output": 139,
+      "wall_sec": 31.278,
+      "receipt_count": 3,
+      "receipt_status_counts": {
+        "ok": 3
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 1,
+        "handoff_results_in_orchestrator": 0,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T04-A1",
+      "task": "T04",
+      "rep": 2,
+      "arch": "A1",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "opened": true,
+        "refusal": true,
+        "unopened_condition": true,
+        "14_day_rule": false
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "specific_date_grounded": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": [],
+        "specific_deadline_correct": true,
+        "shipping_returned": true
+      },
+      "local_pass": false,
+      "routes": [
+        "returns"
+      ],
+      "skills": [],
+      "calls": 6,
+      "attempts": 6,
+      "business_tool_counts": {
+        "verify_customer": 1,
+        "get_order": 1,
+        "get_return_policy": 1,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "sub:returns"
+      ],
+      "usage_input_excluding_cache": 22997,
+      "usage_cache_read": 21120,
+      "usage_input": 44117,
+      "usage_output": 744,
+      "wall_sec": 71.994,
+      "receipt_count": 6,
+      "receipt_status_counts": {
+        "ok": 6
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {
+          "14_day_rule": [
+            "returns"
+          ]
+        },
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 1,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    },
+    {
+      "cell": "r2-T03-A",
+      "task": "T03",
+      "rep": 2,
+      "arch": "A",
+      "upstream_det": true,
+      "upstream_missing": [],
+      "verify_order_violation": false,
+      "claims": {
+        "eligible": true,
+        "unworn": true,
+        "tags": true,
+        "delivered_date": true,
+        "deadline": true
+      },
+      "evidence": {
+        "verified_order_before_access": true,
+        "category_policy": true,
+        "shipment_delivered_date": true
+      },
+      "supplemental": {
+        "orders_without_earlier_same_actor_verification": []
+      },
+      "local_pass": true,
+      "routes": [
+        "returns",
+        "shipping",
+        "returns"
+      ],
+      "skills": [],
+      "calls": 14,
+      "attempts": 14,
+      "business_tool_counts": {
+        "verify_customer": 3,
+        "get_order": 3,
+        "get_return_policy": 2,
+        "get_shipment": 1
+      },
+      "shipping_actors": [
+        "sub:shipping"
+      ],
+      "usage_input_excluding_cache": 47819,
+      "usage_cache_read": 54912,
+      "usage_input": 102731,
+      "usage_output": 1613,
+      "wall_sec": 169.514,
+      "receipt_count": 14,
+      "receipt_status_counts": {
+        "ok": 14
+      },
+      "receipt_usage_matches_trace": true,
+      "raw_exchange_audit": {
+        "all_proposals_declared": true,
+        "host_tool_items_absent": true,
+        "result_consumed_by_calling_actor": true,
+        "data_trace_matches_raw_received_results": true,
+        "skill_trace_matches_actual_text_delivered": true,
+        "delegate_trace_matches_completed_handoffs": true
+      },
+      "context_path": {
+        "absent_from_final_but_present_in_handoff": {},
+        "direct_data_results_in_final_actor_context": 0,
+        "handoff_results_in_orchestrator": 3,
+        "B_data_calls_before_any_skill_body_arrived": []
+      }
+    }
+  ]
+}

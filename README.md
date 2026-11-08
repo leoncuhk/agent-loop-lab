@@ -7,6 +7,7 @@
 | 接手时想做什么 | 阅读入口 |
 |---|---|
 | 了解设计依据、用于应用选型 | [交付导读](HANDOFF.md) → [正式结果及推断边界](FAIR-RESULTS.md) |
+| 看四个开源项目分别实跑了什么、怎样选 | [四项目实践与逐项结果](fieldwork/2026-11-08/README.md)：分开核对任务答案、后台动作、交接与请求数 |
 | 理解方案如何演进 | [客服实验](RESULTS.md) → [困难实验的失败案例](HARD-RESULTS.md) → [四种实现的审查与修复](FAIR-REVIEW.md) |
 | 复查四组是否公平 | [比较规格](FAIR-SPEC.md)、[冻结记录](reviews/fair-v2-freeze.json)、[开发证据核验](reviews/fair-dev-evidence.md) |
 | 核验正式数据 | [独立验收结果](reports/fair-v2-final-independent-audit.json)、[配对资源比较](reports/fair-v2-resource-comparison.json)、[验收脚本用法](analysis/FAIR-EVIDENCE-AUDIT.md) |

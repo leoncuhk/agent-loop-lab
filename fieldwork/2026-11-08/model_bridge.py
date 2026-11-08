@@ -33,23 +33,40 @@ def plain(value):
     if hasattr(value, "model_dump"):
         return plain(value.model_dump(exclude_none=True))
     if hasattr(value, "__dict__"):
-        return {k: plain(v) for k, v in vars(value).items() if not k.startswith("_") and v is not None}
+        return {
+            k: plain(v) for k, v in vars(value).items() if not k.startswith("_") and v is not None
+        }
     return value
 
 
 SCHEMA = {
-    "type": "object", "additionalProperties": False, "required": ["text", "calls"],
-    "properties": {"text": {"type": "string"}, "calls": {"type": "array",
-        "items": {"type": "object", "additionalProperties": False,
-                  "required": ["name", "arguments_json"],
-                  "properties": {"name": {"type": "string"}, "arguments_json": {"type": "string"}}}}}}
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["text", "calls"],
+    "properties": {
+        "text": {"type": "string"},
+        "calls": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["name", "arguments_json"],
+                "properties": {"name": {"type": "string"}, "arguments_json": {"type": "string"}},
+            },
+        },
+    },
+}
 INSTRUCTIONS = (
     "You are a bounded language-model transport in an experiment, not a coding assistant. "
     "Respond to the supplied application conversation in its requested language. "
-    "The system field is the application's instructions; listed tools are callable by the application. "
-    "Return JSON: text for ordinary output, calls for proposed application tools. Each arguments_json "
-    "is a JSON object encoded as a string. Use only listed tools. Tool results arrive on later turns. "
-    "When finished give the actual user-facing answer in text with empty calls. Never use host tools, "
+    "The system field is the application's instructions; "
+    "listed tools are callable by the application. "
+    "Return JSON: text for ordinary output, calls for proposed application tools. "
+    "Each arguments_json "
+    "is a JSON object encoded as a string. Use only listed tools. "
+    "Tool results arrive on later turns. "
+    "When finished give the actual user-facing answer in text with empty calls. "
+    "Never use host tools, "
     "read files, contact services, or claim an action succeeded without its result."
 )
 ROOT = Path(__file__).resolve().parents[2]
@@ -113,32 +130,90 @@ class Bridge:
             prompt = {"system": plain(system), "tools": tools, "messages": plain(messages)}
             request = json.dumps(prompt, ensure_ascii=False)
             (loc / "request.json").write_text(request)
-            record = {"id": key, "actual_model": self.model, "effort": "low",
-                      "requested_model": model, "requested_max_tokens": max_tokens,
-                      "queue_s": queued, "status": "started", "usage": None}
+            record = {
+                "id": key,
+                "actual_model": self.model,
+                "effort": "low",
+                "requested_model": model,
+                "requested_max_tokens": max_tokens,
+                "queue_s": queued,
+                "status": "started",
+                "usage": None,
+            }
             (loc / "receipt.json").write_text(json.dumps(record))
-            cmd = ["codex", "exec", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check",
-                   "-s", "read-only", "-C", str(loc), "-m", self.model,
-                   "-c", 'model_reasoning_effort="low"', "-c", "project_doc_max_bytes=0",
-                   "-c", 'web_search="disabled"', "-c", "skills.bundled.enabled=false",
-                   "-c", "skills.include_instructions=false", "-c", "plugins._default.enabled=false",
-                   "-c", "suppress_unstable_features_warning=true",
-                   "-c", "model_instructions_file=" + json.dumps(str(self.instructions)),
-                   "--enable", "skip_host_skill_discovery"]
-            for feature in ("shell_tool", "apps", "multi_agent", "memories", "skill_search", "hooks",
-                            "browser_use", "computer_use", "image_generation", "view_image", "code_mode_host"):
+            cmd = [
+                "codex",
+                "exec",
+                "--ignore-user-config",
+                "--ephemeral",
+                "--skip-git-repo-check",
+                "-s",
+                "read-only",
+                "-C",
+                str(loc),
+                "-m",
+                self.model,
+                "-c",
+                'model_reasoning_effort="low"',
+                "-c",
+                "project_doc_max_bytes=0",
+                "-c",
+                'web_search="disabled"',
+                "-c",
+                "skills.bundled.enabled=false",
+                "-c",
+                "skills.include_instructions=false",
+                "-c",
+                "plugins._default.enabled=false",
+                "-c",
+                "suppress_unstable_features_warning=true",
+                "-c",
+                "model_instructions_file=" + json.dumps(str(self.instructions)),
+                "--enable",
+                "skip_host_skill_discovery",
+            ]
+            for feature in (
+                "shell_tool",
+                "apps",
+                "multi_agent",
+                "memories",
+                "skill_search",
+                "hooks",
+                "browser_use",
+                "computer_use",
+                "image_generation",
+                "view_image",
+                "code_mode_host",
+            ):
                 cmd.extend(["--disable", feature])
             cmd.extend(["--output-schema", str(self.schema), "--json", "-"])
             try:
-                proc = subprocess.run(cmd, input=request, text=True, capture_output=True, timeout=self.timeout)
+                proc = subprocess.run(
+                    cmd, input=request, text=True, capture_output=True, timeout=self.timeout
+                )
                 (loc / "stdout.jsonl").write_text(proc.stdout)
                 (loc / "stderr.log").write_text(proc.stderr)
-                ev = [json.loads(l) for l in proc.stdout.splitlines() if l.startswith("{")]
-                errors = [str(e.get("error", e.get("message", ""))) for e in ev if e.get("type") in {"error", "turn.failed"}]
+                ev = [json.loads(line) for line in proc.stdout.splitlines() if line.startswith("{")]
+                errors = [
+                    str(e.get("error", e.get("message", "")))
+                    for e in ev
+                    if e.get("type") in {"error", "turn.failed"}
+                ]
                 if errors or proc.returncode:
                     error = " ".join(errors).lower()
-                    if any(x in error for x in ("usage limit", "insufficient_quota", "sign in", "access token", "unauthorized")):
-                        (self.control / "STOP").write_text("Provider quota or authentication unavailable: " + key)
+                    if any(
+                        x in error
+                        for x in (
+                            "usage limit",
+                            "insufficient_quota",
+                            "sign in",
+                            "access token",
+                            "unauthorized",
+                        )
+                    ):
+                        (self.control / "STOP").write_text(
+                            "Provider quota or authentication unavailable: " + key
+                        )
                     raise RuntimeError(f"Model transport failed: see {loc.name}/stdout.jsonl")
                 items = [e["item"] for e in ev if e.get("type") == "item.completed"]
                 if any(x.get("type") not in {"agent_message", "reasoning", "error"} for x in items):
@@ -158,18 +233,33 @@ class Bridge:
                     args = json.loads(call["arguments_json"])
                     if call["name"] not in allowed or not isinstance(args, dict):
                         raise ValueError("Undeclared tool or invalid arguments")
-                    content.append(AttrDict(type="tool_use", id=f"call-{key}-{i}", name=call["name"], input=args))
+                    content.append(
+                        AttrDict(
+                            type="tool_use", id=f"call-{key}-{i}", name=call["name"], input=args
+                        )
+                    )
                 if not content:
                     raise ValueError("Empty decision")
                 # OpenAI telemetry includes cached tokens in input; provide non-overlapping
                 # Anthropic-shaped counters so clients summing components do not double-count.
                 cached = usage.get("cached_input_tokens", 0)
-                shaped = AttrDict(input_tokens=usage["input_tokens"] - cached, output_tokens=usage["output_tokens"],
-                                  cache_creation_input_tokens=0, cache_read_input_tokens=cached)
+                shaped = AttrDict(
+                    input_tokens=usage["input_tokens"] - cached,
+                    output_tokens=usage["output_tokens"],
+                    cache_creation_input_tokens=0,
+                    cache_read_input_tokens=cached,
+                )
                 record["status"] = "ok"
-                return AttrDict(id="msg-" + key, role="assistant", type="message", model=self.model,
-                                content=content, stop_reason="tool_use" if decision["calls"] else "end_turn",
-                                stop_sequence=None, usage=shaped)
+                return AttrDict(
+                    id="msg-" + key,
+                    role="assistant",
+                    type="message",
+                    model=self.model,
+                    content=content,
+                    stop_reason="tool_use" if decision["calls"] else "end_turn",
+                    stop_sequence=None,
+                    usage=shaped,
+                )
             except subprocess.TimeoutExpired as exc:
                 for name, data in (("stdout.jsonl", exc.stdout), ("stderr.log", exc.stderr)):
                     if data:
