@@ -1,0 +1,498 @@
+{
+  "commit": "c43796287b83bec847db923f07131d1cc8de750d",
+  "upstream_tar_sha256": "b5f7981913f373abbb942942cc89394f046a920f196130ebcc39ba73398ea385",
+  "environment": {
+    "python": "3.11.15",
+    "platform": "macOS-27.2-arm64-arm-64bit"
+  },
+  "official_local": {
+    "tests": 48,
+    "offline_smoke": {
+      "app": 19,
+      "single_loop": 19,
+      "harness_errors": 0,
+      "quality_scored": false
+    },
+    "synthetic_traces": 200,
+    "subagent_calls": 322,
+    "coverage_exit": {
+      "12_tasks": 1,
+      "17_tasks": 0
+    }
+  },
+  "published_author_rows_recounted": {
+    "fold": {
+      "baseline": {
+        "rows": 24,
+        "passes": 22,
+        "tasks": 12,
+        "input": 435707,
+        "output": 36941,
+        "calls": 152
+      },
+      "v1": {
+        "rows": 24,
+        "passes": 23,
+        "tasks": 12,
+        "input": 436880,
+        "output": 25235,
+        "calls": 116
+      }
+    },
+    "as-tool": {
+      "baseline": {
+        "rows": 34,
+        "passes": 32,
+        "tasks": 17,
+        "input": 522817,
+        "output": 60315,
+        "calls": 214
+      },
+      "v1": {
+        "rows": 34,
+        "passes": 31,
+        "tasks": 17,
+        "input": 538293,
+        "output": 54777,
+        "calls": 204
+      }
+    },
+    "as-tool-extra": {
+      "baseline-t01-t10": {
+        "rows": 8,
+        "passes": 8,
+        "tasks": 2,
+        "input": 60390,
+        "output": 9924,
+        "calls": 54
+      },
+      "v1-t01-t10": {
+        "rows": 8,
+        "passes": 8,
+        "tasks": 2,
+        "input": 72595,
+        "output": 11961,
+        "calls": 59
+      }
+    }
+  },
+  "counterexamples": {
+    "native_accepts": {
+      "t11_no_evidence_for_claimed_eta": true,
+      "t11_duplicate_return": true,
+      "t11_extra_email_write": true,
+      "t13_duplicate_permitted_action": true,
+      "t13_distinct_unasked_action": false
+    },
+    "chain_coverage_split_rep": {
+      "native_exit": 0,
+      "one_rep_ran_both": false,
+      "printed_full_coverage": true
+    },
+    "panel_accepts": {
+      "valid": true,
+      "late_lookup": false,
+      "duplicate_return": false,
+      "extra_email_write": false,
+      "fabricated_facts": false
+    }
+  },
+  "new_live": {
+    "model": "gpt-6.1-sol",
+    "native_provider_reproduction": false,
+    "main_panel_cells": 18,
+    "calls": 66,
+    "input_includes_cached": true,
+    "groups_all": {
+      "A": {
+        "cells": 6,
+        "passes": 6,
+        "calls": 25,
+        "input": 165271,
+        "output": 1465,
+        "writes": 4,
+        "handoffs": 4
+      },
+      "B": {
+        "cells": 6,
+        "passes": 6,
+        "calls": 25,
+        "input": 166920,
+        "output": 1484,
+        "writes": 4,
+        "handoffs": 4
+      },
+      "C": {
+        "cells": 6,
+        "passes": 6,
+        "calls": 16,
+        "input": 108183,
+        "output": 724,
+        "writes": 4,
+        "handoffs": 0
+      }
+    },
+    "groups_first_balanced": {
+      "A": {
+        "cells": 4,
+        "passes": 4,
+        "calls": 14,
+        "input": 92340,
+        "output": 816,
+        "writes": 2,
+        "handoffs": 2
+      },
+      "B": {
+        "cells": 4,
+        "passes": 4,
+        "calls": 15,
+        "input": 100173,
+        "output": 830,
+        "writes": 2,
+        "handoffs": 2
+      },
+      "C": {
+        "cells": 4,
+        "passes": 4,
+        "calls": 10,
+        "input": 67511,
+        "output": 452,
+        "writes": 2,
+        "handoffs": 0
+      }
+    },
+    "positive_only": {
+      "A": {
+        "cells": 4,
+        "passes": 4,
+        "calls": 21,
+        "input": 138864,
+        "output": 1271,
+        "writes": 4,
+        "handoffs": 4
+      },
+      "B": {
+        "cells": 4,
+        "passes": 4,
+        "calls": 21,
+        "input": 140489,
+        "output": 1293,
+        "writes": 4,
+        "handoffs": 4
+      },
+      "C": {
+        "cells": 4,
+        "passes": 4,
+        "calls": 12,
+        "input": 81368,
+        "output": 542,
+        "writes": 4,
+        "handoffs": 0
+      }
+    },
+    "negative_only": {
+      "A": {
+        "cells": 2,
+        "passes": 2,
+        "calls": 4,
+        "input": 26407,
+        "output": 194,
+        "writes": 0,
+        "handoffs": 0
+      },
+      "B": {
+        "cells": 2,
+        "passes": 2,
+        "calls": 4,
+        "input": 26431,
+        "output": 191,
+        "writes": 0,
+        "handoffs": 0
+      },
+      "C": {
+        "cells": 2,
+        "passes": 2,
+        "calls": 4,
+        "input": 26815,
+        "output": 182,
+        "writes": 0,
+        "handoffs": 0
+      }
+    },
+    "cells": [
+      {
+        "case": "S+",
+        "arm": "A",
+        "rep": 1,
+        "pass": true,
+        "calls": 5,
+        "input": 33242,
+        "output": 356,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "S+",
+        "arm": "B",
+        "rep": 1,
+        "pass": true,
+        "calls": 6,
+        "input": 40810,
+        "output": 367,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "S+",
+        "arm": "C",
+        "rep": 1,
+        "pass": true,
+        "calls": 3,
+        "input": 20490,
+        "output": 144,
+        "handoffs": 0,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "E-",
+        "arm": "B",
+        "rep": 1,
+        "pass": true,
+        "calls": 2,
+        "input": 13145,
+        "output": 92,
+        "handoffs": 0,
+        "writes": 0,
+        "failed": []
+      },
+      {
+        "case": "E-",
+        "arm": "C",
+        "rep": 1,
+        "pass": true,
+        "calls": 2,
+        "input": 13343,
+        "output": 92,
+        "handoffs": 0,
+        "writes": 0,
+        "failed": []
+      },
+      {
+        "case": "E-",
+        "arm": "A",
+        "rep": 1,
+        "pass": true,
+        "calls": 2,
+        "input": 13145,
+        "output": 94,
+        "handoffs": 0,
+        "writes": 0,
+        "failed": []
+      },
+      {
+        "case": "S-",
+        "arm": "C",
+        "rep": 1,
+        "pass": true,
+        "calls": 2,
+        "input": 13472,
+        "output": 90,
+        "handoffs": 0,
+        "writes": 0,
+        "failed": []
+      },
+      {
+        "case": "S-",
+        "arm": "A",
+        "rep": 1,
+        "pass": true,
+        "calls": 2,
+        "input": 13262,
+        "output": 100,
+        "handoffs": 0,
+        "writes": 0,
+        "failed": []
+      },
+      {
+        "case": "S-",
+        "arm": "B",
+        "rep": 1,
+        "pass": true,
+        "calls": 2,
+        "input": 13286,
+        "output": 99,
+        "handoffs": 0,
+        "writes": 0,
+        "failed": []
+      },
+      {
+        "case": "E+",
+        "arm": "C",
+        "rep": 1,
+        "pass": true,
+        "calls": 3,
+        "input": 20206,
+        "output": 126,
+        "handoffs": 0,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "E+",
+        "arm": "B",
+        "rep": 1,
+        "pass": true,
+        "calls": 5,
+        "input": 32932,
+        "output": 272,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "E+",
+        "arm": "A",
+        "rep": 1,
+        "pass": true,
+        "calls": 5,
+        "input": 32691,
+        "output": 266,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "S+",
+        "arm": "B",
+        "rep": 2,
+        "pass": true,
+        "calls": 5,
+        "input": 33742,
+        "output": 357,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "S+",
+        "arm": "C",
+        "rep": 2,
+        "pass": true,
+        "calls": 3,
+        "input": 20466,
+        "output": 146,
+        "handoffs": 0,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "S+",
+        "arm": "A",
+        "rep": 2,
+        "pass": true,
+        "calls": 6,
+        "input": 40234,
+        "output": 388,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "E+",
+        "arm": "A",
+        "rep": 2,
+        "pass": true,
+        "calls": 5,
+        "input": 32697,
+        "output": 261,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "E+",
+        "arm": "C",
+        "rep": 2,
+        "pass": true,
+        "calls": 3,
+        "input": 20206,
+        "output": 126,
+        "handoffs": 0,
+        "writes": 1,
+        "failed": []
+      },
+      {
+        "case": "E+",
+        "arm": "B",
+        "rep": 2,
+        "pass": true,
+        "calls": 5,
+        "input": 33005,
+        "output": 297,
+        "handoffs": 1,
+        "writes": 1,
+        "failed": []
+      }
+    ],
+    "new_native_t11": {
+      "app": {
+        "status": "error",
+        "grade": null,
+        "calls": 14,
+        "error": "RuntimeError('Per-bridge request budget exhausted')",
+        "final_answer": false,
+        "input": 94770,
+        "output": 1201,
+        "actions_in_byte_matched_replay": [
+          {
+            "name": "create_return",
+            "args": {
+              "order_id": "5001",
+              "reason": "changed_mind"
+            }
+          }
+        ],
+        "byte_matched_requests": 14,
+        "agents": {
+          "router": 4,
+          "returns": 6,
+          "orders": 2,
+          "shipping": 2
+        }
+      },
+      "single_loop": {
+        "status": "ok",
+        "grade": {
+          "task_complete": 1
+        },
+        "calls": 3,
+        "error": null,
+        "final_answer": true,
+        "input": 22275,
+        "output": 174,
+        "actions_in_byte_matched_replay": [
+          {
+            "name": "create_return",
+            "args": {
+              "order_id": "5001",
+              "reason": "changed_mind"
+            }
+          }
+        ],
+        "byte_matched_requests": 3,
+        "agents": {
+          "main": 3
+        }
+      }
+    },
+    "all_calls_including_native_t11": 83
+  },
+  "identity": {
+    "bridge_at_freeze_sha256": "6176ef279e66f5b455350e46330fa534888ddad69d89a48504aa5a7096616669",
+    "panel_sha256": "7a4dd72867cb83645338b63a6e7591ad6c9b802b519c7853106922139e871c46",
+    "prereg_sha256": "728cfb1b0025864fdea5e1825a631aeede175d0e477a1f920db468fab1e171d3"
+  }
+}

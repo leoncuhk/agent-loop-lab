@@ -1,0 +1,156 @@
+{
+  "commit": "fd4d59224ab96b43c6dc6888207c67b3bd5a24cf",
+  "upstream": {
+    "pytest_summary": "1104 passed, 1 skipped, 2 warnings in 3.65s",
+    "pytest_exit": 0,
+    "check_exit": 0
+  },
+  "local_probe": {
+    "shopping_skill": {
+      "index_names": [
+        "customer-care",
+        "memory-personalization",
+        "planning-goals",
+        "purchase-research",
+        "search-discovery"
+      ],
+      "initial_full_bodies": 0,
+      "loaded": "search-discovery",
+      "chars": 2818,
+      "unknown_refused": true
+    },
+    "merchant_skill": {
+      "index_names": [
+        "catalog-listings",
+        "inventory-operations",
+        "marketing-campaigns",
+        "performance-insights",
+        "pricing-promotions"
+      ],
+      "initial_full_bodies": 0,
+      "loaded": "inventory-operations",
+      "chars": 4060,
+      "unknown_refused": true
+    },
+    "shopping": {
+      "product": "AR-1805",
+      "catalog_price": 49,
+      "output": "65 W GaN",
+      "unseen_cart_gate": "provenance",
+      "owner_cart_subtotal": 49,
+      "other_cart_count": 0,
+      "foreign_order_read_refused": true
+    },
+    "merchant": {
+      "target": "AR-2102",
+      "initial_stock": 3,
+      "stock_before_approval": 3,
+      "unstaged_evidence_gate": "provenance",
+      "cap_gate": "guardrail",
+      "unapproved_apply_gate": "approval",
+      "stock_after_discard": 3,
+      "stock_after_host_approval": 10,
+      "repeat_apply_http": 400,
+      "post_discard_apply_http": 400,
+      "missing_or_invented_session_http": 401,
+      "unseen_change_in_valid_session_refused": true,
+      "pending_visible_to_another_session_for_same_demo_merchant": true
+    },
+    "stale_price_probe": {
+      "property": "applied move vs current price stays within configured cap",
+      "property_passed": false,
+      "snapshot_price": 49.0,
+      "first_applied_price": 40.0,
+      "second_staged_before": 49.0,
+      "second_approved": true,
+      "final_price": 58.0,
+      "actual_move_pct": 45.0,
+      "cap_pct": 20.0
+    }
+  },
+  "strict_current_price_exit": 1,
+  "live": {
+    "shopping": {
+      "passed": true,
+      "transport_error": null,
+      "turn_complete": true,
+      "calls": 2,
+      "tools": [
+        "search_products",
+        "load_skill",
+        "present_products",
+        "present_suggestions"
+      ],
+      "skills_loaded": [
+        "search-discovery"
+      ],
+      "successful_tools": [
+        "search_products",
+        "load_skill",
+        "present_products",
+        "present_suggestions"
+      ],
+      "ui": [
+        "products",
+        "suggestions"
+      ],
+      "cart_subtotal": 0,
+      "correct_product_in_card": true,
+      "requested_price_in_card": true,
+      "source_id_seen": true
+    },
+    "merchant": {
+      "passed": true,
+      "transport_error": null,
+      "turn_complete": true,
+      "calls": 4,
+      "tools": [
+        "load_skill",
+        "search_listings",
+        "get_inventory_alerts",
+        "get_listing",
+        "get_pending_changes",
+        "stage_inventory_action",
+        "present_suggestions"
+      ],
+      "skills_loaded": [
+        "inventory-operations"
+      ],
+      "successful_tools": [
+        "load_skill",
+        "search_listings",
+        "get_inventory_alerts",
+        "get_listing",
+        "get_pending_changes",
+        "stage_inventory_action",
+        "present_suggestions"
+      ],
+      "ui": [
+        "change_preview",
+        "suggestions"
+      ],
+      "staged": 1,
+      "applied": 0,
+      "stock": 3,
+      "target_stock_delta": 7,
+      "matching_preview": true
+    }
+  },
+  "live_raw_crosschecks": {
+    "product_price_matches_fixture": true,
+    "preview_matches_fixture_and_requested_delta": true,
+    "skill_body_absent_from_first_request_and_returned_as_tool_result": true,
+    "source_tool_choice_always_auto": true
+  },
+  "transport": {
+    "completed": 6,
+    "model": "gpt-6.1-sol",
+    "usage": {
+      "input_tokens": 90552,
+      "cached_input_tokens": 4224,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 408,
+      "reasoning_output_tokens": 0
+    }
+  }
+}
