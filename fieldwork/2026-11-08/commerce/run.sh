@@ -8,6 +8,7 @@ ref="${LOOP_LAB_REFERENCES:-$lab/../references}/commerce-agents"
 out=${1:?usage: run.sh NEW_OUTPUT_DIR [--live]}
 mode=${2:-}
 [[ -z "$mode" || "$mode" == "--live" ]] || exit 2
+mkdir -p "$(dirname -- "$out")"
 mkdir "$out"
 out=$(cd "$out" && pwd)
 mkdir "$out/src"

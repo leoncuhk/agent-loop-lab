@@ -79,7 +79,12 @@ def earlier():
                 == older["variants"]["skills"]["skill_loaded_trials"],
                 "Skill use mismatch",
             )
-        observed[batch] = {"planned": len(plan), "observed": len(keys), **stats}
+        observed[batch] = {
+            "planned": len(plan),
+            "observed": len(keys),
+            "calls": sum(int(r["calls"]) for r in group),
+            **stats,
+        }
     check(len(rows) == sum(x["observed"] for x in observed.values()), "Unknown batch")
     return observed
 
@@ -97,8 +102,13 @@ def fair():
     trials = audit["trials"]
     keys = identifiers(trials, ["task", "method", "rep"])
     methods = freeze["methods"]
-    tasks = {r["task"] for r in trials}
-    check(len(tasks) == 12 and keys == set(product(tasks, methods, range(2))), "Unbalanced holdout")
+    sealed = read(ROOT / "reviews/fair-v2-holdout-tasks.sealed.json")["tasks"]
+    tasks = {r["id"] for r in sealed}
+    check(
+        len(sealed) == len(tasks) == 12
+        and keys == set(product(tasks, methods, range(freeze["reps"]))),
+        "Unbalanced holdout",
+    )
     result = {}
     for method in methods:
         attempts = [r["attempts"] for r in trials if r["method"] == method]
@@ -159,6 +169,13 @@ def fieldwork():
                 f"{label}/{arm}: calls",
             )
             scores[label][arm] = {"passes": passes, "calls": calls}
+    check(
+        set(aidless) == {"bare", "skill"}
+        and all(a["cases"] == 6 and 0 <= a["passed"] <= a["cases"] for a in aidless.values()),
+        "Aidless planned denominators",
+    )
+    check(set(commerce["live"]) == {"shopping", "merchant"}, "Commerce planned roles")
+    check(set(kit["new_native_t11"]) == {"app", "single_loop"}, "Kit original applications")
     native = list(kit["new_native_t11"].values())
     counts = {
         "kit": sum(r["calls"] for r in kit["cells"] + native),
@@ -181,7 +198,13 @@ def fieldwork():
         "four_project_runs": runs,
         "four_project_calls": ledger["four_project_model_calls"],
         "calls": counts,
-        "sql_passes": dict(Counter(r["mode"] for r in sql if r["passed"])),
+        "sql": {
+            mode: {
+                "passed": sum(r["passed"] for r in sql if r["mode"] == mode),
+                "tasks": sum(r["mode"] == mode for r in sql),
+            }
+            for mode in ("skill", "dictionary", "no_source")
+        },
     }
 
 

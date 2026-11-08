@@ -32,3 +32,34 @@ def test_corrupted_release_observations_cannot_pass(tmp_path, monkeypatch, damag
     monkeypatch.setattr(checks, "ROOT", tmp_path)
     with pytest.raises(ValueError):
         checks.earlier()
+
+
+def test_replacing_a_whole_case_does_not_make_a_valid_holdout(monkeypatch):
+    original = checks.read
+
+    def substitute(path):
+        data = original(path)
+        if path.name == "fair-v2-final-independent-audit.json":
+            case = data["trials"][0]["task"]
+            for row in data["trials"]:
+                if row["task"] == case:
+                    row["task"] = "unsealed-case"
+        return data
+
+    monkeypatch.setattr(checks, "read", substitute)
+    with pytest.raises(ValueError, match="Unbalanced holdout"):
+        checks.fair()
+
+
+def test_inflating_an_aggregate_only_panel_is_not_more_observations(monkeypatch):
+    original = checks.read
+
+    def inflated(path):
+        data = original(path)
+        if path.parent.name == "aidless" and path.name == "results.json":
+            data["live_arms"]["bare"]["cases"] *= 10
+        return data
+
+    monkeypatch.setattr(checks, "read", inflated)
+    with pytest.raises(ValueError, match="Aidless"):
+        checks.fieldwork()
