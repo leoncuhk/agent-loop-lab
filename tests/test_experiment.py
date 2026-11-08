@@ -1,9 +1,23 @@
 import json
+import subprocess
 
 from loop_lab.experiment import run_batch
 
 
-def test_budget_exhaustion_retains_unstarted_trials_without_scoring_them(tmp_path):
+def test_budget_exhaustion_retains_unstarted_trials_without_scoring_them(tmp_path, monkeypatch):
+    # run_batch records CLI metadata even when the budget forbids every trial.
+    # Stub only that probe; starting a real model would violate the test contract.
+    original = subprocess.check_output
+
+    def metadata_only(cmd, *args, **kwargs):
+        if cmd == ["codex", "--version"]:
+            return "offline-test-cli"
+        if cmd and cmd[0] == "codex":
+            raise AssertionError(f"Unexpected Codex invocation in offline test: {cmd[:2]}")
+        return original(cmd, *args, **kwargs)
+
+    monkeypatch.setattr(subprocess, "check_output", metadata_only)
+
     output = tmp_path / "empty-budget"
     run_batch(
         output,
