@@ -2,7 +2,7 @@
 
 由 [catalog.py](../scripts/catalog.py) 从 Git 索引生成。角色与阅读顺序见[代码与资产地图](repository.md)。不含原始运行目录、缓存或外部代码。
 
-本版共 **186** 个文件；下面的数字是文件数，不是实验数或覆盖率。
+本版共 **187** 个文件；下面的数字是文件数，不是实验数或覆盖率。
 
 ## 根目录：入口、正式报告、协议与配置 · 20
 
@@ -45,7 +45,7 @@
 - [data/observations.csv](../data/observations.csv)
 - [data/source-hashes.json](../data/source-hashes.json)
 
-## 阅读版与历史过程 · 15
+## 阅读版与历史过程 · 16
 
 - [docs/english.md](english.md)
 - [docs/files.md](files.md)
@@ -56,6 +56,7 @@
 - [docs/records/FAIR-RUNNING.md](records/FAIR-RUNNING.md)
 - [docs/records/FAIR-STATUS.md](records/FAIR-STATUS.md)
 - [docs/records/HARD-README.md](records/HARD-README.md)
+- [docs/records/PUBLICATION.md](records/PUBLICATION.md)
 - [docs/records/README.md](records/README.md)
 - [docs/records/REVIEW.md](records/REVIEW.md)
 - [docs/repository.md](repository.md)

@@ -10,3 +10,5 @@
 | 跨项目检验 | [kit 预登记](../../fieldwork/2026-11-08/kit/PREREG.md)、[原版双应用追加计划](../../fieldwork/2026-11-08/kit/NATIVE-LIVE-PLAN.md)、[haty 协议](../../fieldwork/2026-11-08/haty/prereg.md)、[aidless 协议](../../fieldwork/2026-11-08/aidless/PROTOCOL.md) | commerce 在[项目报告](../../fieldwork/2026-11-08/commerce/README.md)说明两次独立复现；SQL 附项脚本启动时写计划，不把所有研究都说成事前注册 | [综合与全部入口](../../fieldwork/2026-11-08/README.md) |
 
 旧状态页记录的认证和配额问题解释了某些空批次；它们既不推翻随后完成的留出结果，也不能当作模型做错任务。私有材料在文中只标本机相对路径；公开替代材料见[数据说明](../../data/README.md)。
+
+[公开研究版的审查、反例修复和干净检出验收](PUBLICATION.md)。
