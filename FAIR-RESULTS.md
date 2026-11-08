@@ -80,10 +80,10 @@
 
 ## 可复查材料
 
-- [正式原始结果与统计](runs/fair-holdout-v2/REPORT.md)；[逐trial账本](runs/fair-holdout-v2/trials.jsonl)；[冻结记录](reviews/fair-v2-freeze.json)
+- 正式原始结果与统计（本机 `runs/fair-holdout-v2/REPORT.md`）；逐trial账本（本机 `runs/fair-holdout-v2/trials.jsonl`）；[冻结记录](reviews/fair-v2-freeze.json)
 - [独立最终验收](reports/fair-v2-final-independent-audit.json)：96/96 verified，full_comparison_eligible=true，无不一致；重新计价3,603份报价、核验24条审计记录、96次host收尾。
 - [配对资源分析](reports/fair-v2-resource-comparison.json)；[已见失败的确定性重放](reports/fair-v2-known-defects.json)
-- [方法与工程审查](FAIR-REVIEW.md)；[开发证据独立复核](reviews/fair-dev-evidence.md)；[运行规格](FAIR-SPEC.md)
+- [方法与工程审查](docs/records/FAIR-REVIEW.md)；[开发证据独立复核](reviews/fair-dev-evidence.md)；[运行规格](FAIR-SPEC.md)
 - [验收脚本与使用说明](analysis/FAIR-EVIDENCE-AUDIT.md)。冻结期间源码未变，最终48项工程测试和ruff检查通过。工程测试不替代以上真实模型数据。
 
 有效开发两轮另有105次模型调用、1,549,121 tokens；未并入正式成绩。此前账号额度拒绝无有效模型输出，独立保存在失效批次；该技术故障不计为方法能力失败。

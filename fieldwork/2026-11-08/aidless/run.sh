@@ -2,7 +2,7 @@
 # From the lab root. Refuse to overwrite any raw run.
 set -euo pipefail
 here=$(cd "$(dirname "$0")" && pwd)
-ref="$here/../../../../references/agent-loop-safety"
+ref="${LOOP_LAB_REFERENCES:-$here/../../../../references}/agent-loop-safety"
 sha=c504861ac65229a852deb44123210c675a67a9b8
 out=${1:?usage: run.sh NEW_DIRECTORY [--live]}
 test ! -e "$out"

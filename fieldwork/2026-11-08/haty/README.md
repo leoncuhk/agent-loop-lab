@@ -54,7 +54,7 @@
 ```bash
 EX=fieldwork/2026-11-08/haty
 BASE=runs/oss-fieldwork-20261108/haty
-REF=../references/zenn-articles
+REF="${LOOP_LAB_REFERENCES:-../references}/zenn-articles"
 SHA=d8a1d8183c72c50ec1a8bb289c308ed8fd1d54d5
 # 新机器或新工作目录才需要展开固定快照、准备 SDK（仅用于导入原模块）。
 mkdir -p "$BASE"

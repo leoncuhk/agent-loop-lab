@@ -14,9 +14,9 @@
 
 ## 本轮核查证据及未误报的行为
 
-- [P2/eager/rep1](../runs/hard-core-v1/P2-eager-1/result.json)：提交 `B3/C4/T5`，utility 169，现金错误地填为另一个候选的 9830；真实现金 10222 超出预算。评分器已拒绝，不能把这条记录称为通过。
-- [P2/tools/rep1](../runs/hard-core-v1/P2-tools-1/result.json)：方案可行但次优，utility gap=4；不能只做“金额与候选绑定”便声称解决全局最优。
-- [R2/domain/rep0](../runs/hard-core-v1/R2-domain-0/result.json)：24 次调用全部已计量；第 23 次审计专家有正确结果，第 24 次由采购专家消耗，主协调者未保存草案。需要验证预算分配，而非给 domain 更大的未计入总数额度。
+- P2/eager/rep1（本机 `runs/hard-core-v1/P2-eager-1/result.json`）：提交 `B3/C4/T5`，utility 169，现金错误地填为另一个候选的 9830；真实现金 10222 超出预算。评分器已拒绝，不能把这条记录称为通过。
+- P2/tools/rep1（本机 `runs/hard-core-v1/P2-tools-1/result.json`）：方案可行但次优，utility gap=4；不能只做“金额与候选绑定”便声称解决全局最优。
+- R2/domain/rep0（本机 `runs/hard-core-v1/R2-domain-0/result.json`）：24 次调用全部已计量；第 23 次审计专家有正确结果，第 24 次由采购专家消耗，主协调者未保存草案。需要验证预算分配，而非给 domain 更大的未计入总数额度。
 - 当前预算使用锁、在途预留与 shared cap，`ThrottledModelRun` 限制实际请求并发；未发现绕过这两者的普通主/子调用路径。
 - 超时后未知用量导致停止新请求，是 HARD-SPEC 明确的保守策略，不作为缺陷。不能为了完整矩阵删去该错误、把未知用量设为零，或偷偷清零 Budget 重跑。
 - 当前 Codex CLI 是原生 Mach-O 可执行文件，不是已知会遗留 native 子进程的 npm wrapper。本次没有证据支持“超时一定留下后台计费进程”的断言。

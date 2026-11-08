@@ -22,7 +22,7 @@
 
 skills在13/16次运行中确实加载了Skill，不是因为功能完全没有触发。没有把“加载过”当成“完整遵循所有流程”，也没有将未加载但任务正确的情况判错。
 
-来源：[v2报告](runs/corrected-regression-v2/REPORT.md)、[逐次结果](runs/corrected-regression-v2/results.jsonl)、[汇总及输入摘要](reports/v2-summary.json)。独立审查重新评分零差异，113份CLI输出、48组SQLite事件/回执全部对应。
+来源：v2报告（本机 `runs/corrected-regression-v2/REPORT.md`）、逐次结果（本机 `runs/corrected-regression-v2/results.jsonl`）、[汇总及输入摘要](reports/v2-summary.json)。独立审查重新评分零差异，113份CLI输出、48组SQLite事件/回执全部对应。
 
 ## 多 Agent 的同版本对照
 
@@ -37,7 +37,7 @@ skills在13/16次运行中确实加载了Skill，不是因为功能完全没有�
 
 在这个明确的同版本批次，tools相对multi平均调用少50.7%、耗时低48.3%。多Agent不是故意写弱的固定流水线：专家获得原始请求和全部只读工具，协调者可在无需专家时直接申请动作；仍然产生较多模型回合。
 
-不把该轮multi的单次结果与v2单循环结果拼成同协议排行榜。来源：[四方案确认报告](runs/confirmation-v1/REPORT.md)、[确认阶段预记录](CONFIRMATION-PLAN.md)。
+不把该轮multi的单次结果与v2单循环结果拼成同协议排行榜。来源：四方案确认报告（本机 `runs/confirmation-v1/REPORT.md`）、[确认阶段预记录](CONFIRMATION-PLAN.md)。
 
 ## 实际学到的机制
 
@@ -53,7 +53,7 @@ skills在13/16次运行中确实加载了Skill，不是因为功能完全没有�
 - 预定重复：16题×3单循环=48次，47次通过；1次h14/skills受桥接器4调用限制影响。原始记录全部保留，VALIDITY.json与派生summary均标为不能用于架构质量归因。
 - 修复后回归：同16题×3方案=48次，48次通过。上限16同时进入JSON Schema和模型可见指令，协议标为v2；h14再次产生相同5调用组合并成功执行。
 
-因此正式批次共192次真实模型驱动运行，历史1次装置失败没有被抹掉或悄悄换成成功。v1与v2不合并成功率；修复没有被描述为Skills的能力提升。[装置修正记录](CORRECTION.md)、[旧失败记录](runs/confirmation-repeat-v1/h14-skills-0/result.json)、[修复后对应记录](runs/corrected-regression-v2/h14-skills-0/result.json)。
+因此正式批次共192次真实模型驱动运行，历史1次装置失败没有被抹掉或悄悄换成成功。v1与v2不合并成功率；修复没有被描述为Skills的能力提升。[装置修正记录](docs/records/CORRECTION.md)、旧失败记录（本机 `runs/confirmation-repeat-v1/h14-skills-0/result.json`）、修复后对应记录（本机 `runs/corrected-regression-v2/h14-skills-0/result.json`）。
 
 确认数据已被看到之后，只修复装置，不用它修改业务提示词或评分目标。仍不能因此宣称独立业务外部效度。
 
@@ -61,10 +61,10 @@ skills在13/16次运行中确实加载了Skill，不是因为功能完全没有�
 
 18个公开边界测试通过，ruff通过。包括真实LangGraph跨进程审批恢复、多个interrupt ID、共享预算、身份/政策拒绝、幂等、额外动作、伪造专家事实、条件证据时序、审批拒绝后重试和失效报告阻断。
 
-另外，把v2的一个待审tools会话复制到独立演示目录，重新启动进程批准后继续调用真实模型：新增1次模型调用，获得唯一 `R-OLD` / 8900分回执，pending为空。原实验状态未改写。[真实恢复验证](runtime/approval-demo-v2/validation.json)。这验证本地模拟动作与状态恢复，不代表真实支付或人工身份系统接通。
+另外，把v2的一个待审tools会话复制到独立演示目录，重新启动进程批准后继续调用真实模型：新增1次模型调用，获得唯一 `R-OLD` / 8900分回执，pending为空。原实验状态未改写。真实恢复验证（本机 `runtime/approval-demo-v2/validation.json`）。这验证本地模拟动作与状态恢复，不代表真实支付或人工身份系统接通。
 
 ```bash
-cd /Users/leon/Documents/harness/research/evaluation/agent-loop-lab
+# 在仓库根目录执行
 bash demo.sh
 ```
 
@@ -74,7 +74,7 @@ bash demo.sh
 
 四个正式批次合计498次模型调用、3,589,507个已报告输入输出tokens。加连接/接线探针3次、20,107 tokens，以及审批恢复1次、6,961 tokens，本轮实验相关总计 **502次、3,616,575 tokens**。不包含本次开发对话本身的token；CLI计划消费没有已核实逐次美元价格，所以金额未知。
 
-四批模型执行期间源码摘要均未变化。v2测试源码保留在 [v2冻结快照](runs/corrected-regression-v2/source-snapshot)，v1源码通过已记录变化重建并逐文件SHA-256与原manifest完全吻合，保留在 [v1冻结快照](runs/frozen-source-v1)。
+四批模型执行期间源码摘要均未变化。v2测试源码保留在 v2冻结快照（本机 `runs/corrected-regression-v2/source-snapshot`），v1源码通过已记录变化重建并逐文件SHA-256与原manifest完全吻合，保留在 v1冻结快照（本机 `runs/frozen-source-v1`）。
 
 模型实验结束后，仅报告模块增加读取VALIDITY.json的逻辑，防止失效批次单独生成报告时再显示“可比”；其负样本回归通过。交付代码与实测v2的差异仅此报告文件，运行循环、任务、Skills、评分器、模型桥接保持一致，见 [交付差异记录](reports/release-diff.json)。旧派生summary原件另存，模型原始输出和逐次结果未修改。
 

@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the repository and the commit or experiment tag used."
+title: "Agent Loop Lab: Experiments on Skills, Tools, and Subagent Boundaries"
+authors:
+  - name: "leoncuhk"
+repository-code: "https://github.com/leoncuhk/agent-loop-lab"
+type: software
+license: Apache-2.0

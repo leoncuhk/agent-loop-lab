@@ -1,5 +1,7 @@
 # 四方法优化后的复测状态
 
+> 历史过程快照，描述记录当时的状态。正式批次后来已结束；引用最终结果请用[冻结复测报告](../../FAIR-RESULTS.md)。
+
 更新：2026-11-07。当前状态：**实现与离线验证完成；真实模型开发集和最终留出复测被账户额度阻塞。没有新的方法效果排名。**
 
 ## 已完成的优化
@@ -27,9 +29,9 @@
 
 设计阶段已完成Matt code-review的Standards/Spec两轴与codebase-design三种Interface比较：
 
-- [Standards与最小Interface](reviews/fair-v2-standards-design.md)
-- [Spec与试验协议](reviews/fair-v2-spec-design.md)
-- [常见调用者与方法优化](reviews/fair-v2-strategy-design.md)
+- [Standards与最小Interface](../../reviews/fair-v2-standards-design.md)
+- [Spec与试验协议](../../reviews/fair-v2-spec-design.md)
+- [常见调用者与方法优化](../../reviews/fair-v2-strategy-design.md)
 
 这些审查覆盖设计及旧实现。**新版实现的最后一次独立代理复查未完成**：代理运行时仍报告旧令牌刷新失败。后续离线回归和缺陷修复由主实现者完成，不能把它写成最终独立验收已经通过。
 
@@ -39,7 +41,7 @@
 
 这次拒绝也复现了运行器未对额度错误立即停止的缺陷；修复后新增离线负样本验证：当前平衡块结束即停止，后续未运行清单保留，不再无效遍历全部任务。
 
-用户确认重新登录后，CLI login status显示已登录；随后只做一次最小可用性探针，仍返回 `usage_limit`。记录在 [最小探针](runs/fair-service-probe-20261107T012006Z/usage.jsonl)。因此没有继续发请求，也没有把离线脚本结果冒充模型效果。
+用户确认重新登录后，CLI login status显示已登录；随后只做一次最小可用性探针，仍返回 `usage_limit`。记录在 最小探针（本机 `runs/fair-service-probe-20261107T012006Z/usage.jsonl`）。因此没有继续发请求，也没有把离线脚本结果冒充模型效果。
 
 ## 独立留出与科学比较边界
 
@@ -56,7 +58,7 @@
 先恢复当前账号模型额度，或由用户明确选择新的有额度模型/API路线。改变模型需要重新固定条件，不能继续冒充原模型对照。
 
 ```bash
-cd /Users/leon/Documents/harness/research/evaluation/agent-loop-lab
+# 在仓库根目录执行
 
 # 使用新目录。已存在的失败批次保持原样。
 uv run --frozen python -m loop_lab.fair.study dev --output runs/fair-dev-v2

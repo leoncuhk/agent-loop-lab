@@ -8,7 +8,7 @@
 
 `HARD-RESULTS.md` 的失败需要分别处理：P2/tools 已正确算出最优候选现金但最终选了次优；P2/eager 把别的候选金额移到当前候选；R2/domain 的专家已有正确局部结果，却在24次共享调用内没有留下最终草案。它们分别指向候选选择、实体与结果绑定、交接与收尾预算。没有证据能把三种问题都归为“某方法无效”。[结果](../HARD-RESULTS.md)
 
-当前 `_child()` 每次都用随机 reader 名、新建无 checkpointer 的图；委派 Interface 是 `delegate(specialist, assignment)`，政策/采购/审计角色的资料范围高度重叠。主 Agent 在 domain 组不能直接使用全部读工具，且各次重复委派重新建立上下文。这个 Interface 把协调复杂度留给模型，当前不是完整工作包的深度委派。[冻结 runtime](fair-v2-baseline/src/loop_lab/hard/runtime.py:68)、[child 生命周期](fair-v2-baseline/src/loop_lab/hard/runtime.py:157)
+当前 `_child()` 每次都用随机 reader 名、新建无 checkpointer 的图；委派 Interface 是 `delegate(specialist, assignment)`，政策/采购/审计角色的资料范围高度重叠。主 Agent 在 domain 组不能直接使用全部读工具，且各次重复委派重新建立上下文。这个 Interface 把协调复杂度留给模型，当前不是完整工作包的深度委派。[冻结 runtime](fair-v2-baseline/src/loop_lab/hard/runtime.py#L68)、[child 生命周期](fair-v2-baseline/src/loop_lab/hard/runtime.py#L157)
 
 建议保留一个深 module：**HardExecution**。其 Interface 继续服务两个实际 caller：完整任务批次 `.run()`，以及交互会话 `.advance(message)`。caller 不负责创建专家、分配 thread_id、拼报价数字、合并 budget 或猜测是否已完成提交。
 
@@ -33,7 +33,7 @@ with HardExecution(task, "multi", model_client, output_dir, protocol="fair-v2") 
     second = session.advance("[revision 1] 平台改为B，其余条件保留")
 ```
 
-兼容当前 `trial()` 的 `answer / turn_answers / world` 返回结构；增加 `method_contract`、`actual_topology` 和 `budget_summary`，不要求 caller 自行扫描各 child 的内部状态。`run()`、`advance()` 与资源释放即可，不引入独立的 plan/start_worker/poll_worker/synthesize/finalize caller 流程。[现有 caller](fair-v2-baseline/src/loop_lab/hard/run.py:21)
+兼容当前 `trial()` 的 `answer / turn_answers / world` 返回结构；增加 `method_contract`、`actual_topology` 和 `budget_summary`，不要求 caller 自行扫描各 child 的内部状态。`run()`、`advance()` 与资源释放即可，不引入独立的 plan/start_worker/poll_worker/synthesize/finalize caller 流程。[现有 caller](fair-v2-baseline/src/loop_lab/hard/run.py#L21)
 
 Interface 必须公开的规则：
 
@@ -43,7 +43,7 @@ Interface 必须公开的规则：
 - 任务额度不足、基础设施错误、分支未完成、没有可行候选、成功交付分别返回/记录；不能以一个空成功答案掩盖。
 - 应用可见材料仅从公开 `packets` 和已收到的用户消息构建。初始化时生成白名单 `PublicCase`，之后 runtime 不保留 `expected`、`latest_case`、oracle 或未来用户修订内容的引用。
 
-最后一点尤其重要：当前 task 同时携带模型材料与评分真值。新增工具不能为了“正确计算最新条件”直接取 `task.latest_case`；这会把独立评分真值变成业务工具输入。[任务生成结构](fair-v2-baseline/src/loop_lab/hard/tasks.py:133)
+最后一点尤其重要：当前 task 同时携带模型材料与评分真值。新增工具不能为了“正确计算最新条件”直接取 `task.latest_case`；这会把独立评分真值变成业务工具输入。[任务生成结构](fair-v2-baseline/src/loop_lab/hard/tasks.py#L133)
 
 ## 3. 所有组共用的报价、比较与提交 module
 
@@ -61,7 +61,7 @@ quote registry 需保存 canonical SKU 集、policy hash、requirements hash、r
 
 报价工具可以内部读取权威公开资料，但应记录真实读取事件；它返回的来源是 runtime 产生的 provenance，不能从模型自报的 evidence_ids 无条件继承。若工具直接使用内部数据，需明确改变“模型必须亲自读每份原始资料”的要求为“决策使用了由权威工具计算并带来源的结果”；不能为了凑现有评分静默伪造 read_packet 轨迹。
 
-当前固定算术限制继续披露。采用多个报价对象及批量比较以后，不需要鼓励模型用 10^15 打包排序或构造超大算术表达式。[算术与草案基线](fair-v2-baseline/src/loop_lab/hard/world.py:11)
+当前固定算术限制继续披露。采用多个报价对象及批量比较以后，不需要鼓励模型用 10^15 打包排序或构造超大算术表达式。[算术与草案基线](fair-v2-baseline/src/loop_lab/hard/world.py#L11)
 
 **关于精确优化工具：** 如果未来新增直接枚举或求解完整组合的公共 optimizer，四组都可以使用，但它改变了问题：测量的是“模型调用确定性求解器的能力”。应作为单独工具条件，不与本次 quote/compare 的结果合并，以免把规划难度完全外包后仍声称验证了架构的推理优势。
 
@@ -132,7 +132,7 @@ shared_budget, reserve_for_main, worker_stop_reasons
 
 ## 6. 共享预算与主 Agent 收尾
 
-保留当前 `ModelRun`/`Budget` 的总账，增加内部 role-aware budget lease。worker 额度是一份总预算中的使用权，不是新的预算；每次真实模型调用都在同一锁下检查和记账。当前仅有总额度，没有给主 Agent 留收尾空间。[总账](fair-v2-baseline/src/loop_lab/models.py:118)
+保留当前 `ModelRun`/`Budget` 的总账，增加内部 role-aware budget lease。worker 额度是一份总预算中的使用权，不是新的预算；每次真实模型调用都在同一锁下检查和记账。当前仅有总额度，没有给主 Agent 留收尾空间。[总账](fair-v2-baseline/src/loop_lab/models.py#L118)
 
 可以先冻结一个明确的起始策略：24次任务额度内预留主 Agent 4次用于比较/纠错、stage 与最终 Answer；每个新 worker 的上限不超过6次，也不得超过扣除主 reserve 后按未完成分支分配的额度。这里的4/6只是可测试的初始配置，不是已证明最优值；主 Agent不需要委派时仍可使用全部预算。
 

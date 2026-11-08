@@ -4,7 +4,7 @@ set -euo pipefail
 here=$(cd "$(dirname "$0")" && pwd)
 lab=$(cd "$here/../../.." && pwd)
 rev=fd4d59224ab96b43c6dc6888207c67b3bd5a24cf
-ref="$lab/../references/commerce-agents"
+ref="${LOOP_LAB_REFERENCES:-$lab/../references}/commerce-agents"
 out=${1:?usage: run.sh NEW_OUTPUT_DIR [--live]}
 mode=${2:-}
 [[ -z "$mode" || "$mode" == "--live" ]] || exit 2

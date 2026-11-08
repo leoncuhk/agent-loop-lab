@@ -1,0 +1,2 @@
+# Numerical datasets are intentionally plain text and diffable.
+*.csv text eol=lf

@@ -14,7 +14,7 @@
 
 **尚未执行**：24项Skill库的正式规模对照、原始/紧凑审计资料的正式矩阵、精确优化工具的补充实验。审计子Agent只有接线证据，不能宣布隔离或并行已经胜出。
 
-来源：[core分项报告](runs/hard-core-v1/HARD-REPORT.md)、[完整manifest与未运行清单](runs/hard-core-v1/manifest.json)、[逐次结果](runs/hard-core-v1/results.jsonl)、[原始计划](HARD-MATRIX.md)。
+来源：core分项报告（本机 `runs/hard-core-v1/HARD-REPORT.md`）、完整manifest与未运行清单（本机 `runs/hard-core-v1/manifest.json`）、逐次结果（本机 `runs/hard-core-v1/results.jsonl`）、[原始计划](HARD-MATRIX.md)。
 
 ## 已经改变认知的三条实证
 
@@ -26,7 +26,7 @@ P2/tools/rep1提交B1/C5/T5：现金9830、utility164，方案可行，但最优
 
 **应用启发**：共享上下文和Skills并不自动保证目标优先级或全局最优。可形式化的问题应考虑精确求解工具、结构化候选比较与明确验收；模型负责理解目标、取数和解释取舍。这是下一步方法建议，本轮尚未实测优化工具。
 
-[该次原始结果](runs/hard-core-v1/P2-tools-1/result.json)。
+该次原始结果（本机 `runs/hard-core-v1/P2-tools-1/result.json`）。
 
 ### 2. 全量流程知识也不能防止“金额属于另一个候选”
 
@@ -36,7 +36,7 @@ P2/eager/rep1提交B3/C4/T5，报告现金9830、utility169。其中utility正�
 
 **应用启发**：问题是实体与结果的关联，不能只靠更多上下文解决。实际工具接口应把candidate_id/商品集合/金额/政策版本/来源绑定成一个报价对象；后续提交引用quote_id，减少模型在多条裸数字之间重新拼装。此接口改进是建议，未作为本轮已验证新方案。
 
-[该次原始结果](runs/hard-core-v1/P2-eager-1/result.json)。
+该次原始结果（本机 `runs/hard-core-v1/P2-eager-1/result.json`）。
 
 ### 3. 专家答对了，协调系统仍可能交付失败
 
@@ -46,7 +46,7 @@ R2/domain/rep0的第23次模型调用中，审计专家已经返回真正最优B
 
 **应用启发**：子Agent的正确局部答案还需要足够、稳定的交接输出、清晰职责、终止条件和收尾预算。数学核验可交给确定性工具；需要独立视角的验证才值得另用模型上下文。
 
-[第一条预算失败](runs/hard-core-v1/R2-domain-0/result.json)、[第二条记录](runs/hard-core-v1/R2-domain-1/result.json)。
+第一条预算失败（本机 `runs/hard-core-v1/R2-domain-0/result.json`）、第二条记录（本机 `runs/hard-core-v1/R2-domain-1/result.json`）。
 
 ## 对此前结论的修正
 
@@ -76,7 +76,7 @@ Skills目录、数据工具、计算器、草案接口和评分器由本项目�
 
 接线阶段修正过知识不公平、初始case读取不对称、双重JSON转义、计算器小数精度/深度、模型并发参数边界等问题，全部在正式core冻结前完成。
 
-收尾时仅把原已存在的计算器限制（常数绝对值<=10^12、长度16000、AST节点2500、深度64、40位Decimal精度）公开到工具说明，并使超界错误明确说明上限。计算规则、任务和oracle没有改动。该说明修正没有再做真实模型复测，不声称已经消除R2失败；[交付差异记录](reports/hard-release-diff.json)与[冻结实测源码](runs/hard-core-v1/source-snapshot)分别保留。
+收尾时仅把原已存在的计算器限制（常数绝对值<=10^12、长度16000、AST节点2500、深度64、40位Decimal精度）公开到工具说明，并使超界错误明确说明上限。计算规则、任务和oracle没有改动。该说明修正没有再做真实模型复测，不声称已经消除R2失败；[交付差异记录](reports/hard-release-diff.json)与冻结实测源码（本机 `runs/hard-core-v1/source-snapshot`）分别保留。
 
 ## 结论边界
 

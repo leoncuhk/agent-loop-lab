@@ -1,113 +1,39 @@
 # Agent Loop Lab
 
-**从[研究交付：一个主 Agent、操作手册，还是多个 Agent？](HANDOFF.md)开始。** 这份文档从一条条件退货请求讲起，说明为什么做三轮实验、哪两类失败要靠工具修、什么时候值得尝试 Skills 或子 Agent。
+**一个主 Agent、一套按需读取的手册，还是多个独立决策者？** 这个实验仓从 [Anthropic 关于折回子 Agent 的文章](https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop)出发，用实际工具、模拟业务状态和真实模型调用检验它的建议。读者可以复算结果、检查失败，再把同样的比较用在自己的业务上。
 
-在正式的 12 道合成新题上，四种配置各 24/24 首次通过；单 Agent＋工具的平均 tokens 最少。动作均在本地模拟系统中发生。实验不涉及真实客户、支付或生产部署。
+> **我们现在的选择：** 对需要把刚查到的事实用于下一步动作的短任务，先让一个主 Agent 带可靠工具完成。可独立维护的知识可以按需读，不必因此另设决策者。若子任务能独立调查、隔离权限或核验错误，要用这些收益选题比较；本仓没有测出子 Agent 在那些场景中的胜负。
 
-| 接手时想做什么 | 阅读入口 |
-|---|---|
-| 了解设计依据、用于应用选型 | [交付导读](HANDOFF.md) → [正式结果及推断边界](FAIR-RESULTS.md) |
-| 看四个开源项目分别实跑了什么、怎样选 | [四项目实践与逐项结果](fieldwork/2026-11-08/README.md)：分开核对任务答案、后台动作、交接与请求数 |
-| 理解方案如何演进 | [客服实验](RESULTS.md) → [困难实验的失败案例](HARD-RESULTS.md) → [四种实现的审查与修复](FAIR-REVIEW.md) |
-| 复查四组是否公平 | [比较规格](FAIR-SPEC.md)、[冻结记录](reviews/fair-v2-freeze.json)、[开发证据核验](reviews/fair-dev-evidence.md) |
-| 核验正式数据 | [独立验收结果](reports/fair-v2-final-independent-audit.json)、[配对资源比较](reports/fair-v2-resource-comparison.json)、[验收脚本用法](analysis/FAIR-EVIDENCE-AUDIT.md) |
+例如，客户说“如果新设备周五前到，才退旧设备”。负责退货的程序至少要知道**哪笔订单、什么截止日、查到的 ETA、允许做什么**。一笔退货可能已经落库，用户却没收到单号；专家也可能把签收日期回传正确，最终答复还是漏了日期。因此这里分别查**拿到的事实、决策时可见的信息、后台写入、用户收到的答复**。
 
-## 复核或复跑
+## 实验给出了什么答案？
 
-**只复核，不调用模型。** 在仓库根目录运行工程测试；若本机还保留正式运行目录，可进一步复算证据：
-
-```bash
-uv sync --frozen --extra dev
-uv run --frozen --extra dev pytest -q
-uv run --frozen --extra dev ruff check .
-# 需要本机原始 runs/；最终核验看 final_acceptance 和 full_comparison_eligible。
-python3 -B analysis/audit_fair_evidence.py runs/fair-holdout-v2
-```
-
-**重新运行正式配置，会消耗真实模型额度。** 需要已登录且可用的 Codex CLI；使用新输出目录，保留原批次。以下是同题回归。若用这些题调了方法，要另留新题才能再次检验泛化。
-
-```bash
-uv run --frozen python -m loop_lab.fair.study test \
-  --output runs/my-fair-replay --receipt reviews/fair-v2-freeze.json
-```
-
-Git 标签 `fair-v2`（`20074a8`）固定了实验代码、依赖、合成题、冻结摘要和核验报告。原始模型请求/回复、事件和数据库留在本机 `runs/`、`runtime/`，不纳入 Git；只有代码仓时可以阅读验收结果或做新的运行，不能从摘要还原旧轨迹。工作区内另有[原文配套示例的证据核查](../docs/2026-11-06-single-agent-loop-kit-evidence.md)和[开源实现选型依据](../docs/agent-loop-alternatives-2026-11-06/README.md)。
-
-<details>
-<summary>第一轮客服实验：四种旧配置、条件退货演示与原始运行说明</summary>
-
-## 客服实验的四个可执行候选
-
-| 名称 | 实现 | 要检验的问题 |
+| 实验和可比单位 | 结果 | 可以据此判断什么 |
 |---|---|---|
-| multi | LangChain 协调者 + shipping/returns 独立循环；专家保留原始请求；主 Agent 执行动作 | 独立上下文和交接是否值得 |
-| tools | 单主循环 + 业务工具 | 强模型与可靠工具本身能完成多少 |
-| skills | 同一主循环 + Skill 元数据 + load_skill | 按需专业方法能否提升完成质量 |
-| eager | 同一主循环 + 同样的 Skill 正文全部预加载 | 知识增益与渐进披露收益能否分开 |
+| [客服基线](RESULTS.md)：同 16 题、四配置各一次；修复后的三组另计 | 同版本四组各 16/16；修复后的按需组 13/16 次确实读了手册 | 读过不等于改善。工具组也有用户目标、工具说明、政策事实和工具回执。 |
+| [提高难度](HARD-RESULTS.md)：组合采购与多轮修订，计划 48 次 | 启动 33 次，25 次通过；观察到次优选择、报价错配和委派后没预算提交 | 适合定位失败；中断且不平衡，不能凭总分排架构。 |
+| [改好四组再测](FAIR-RESULTS.md)：冻结后 12 道新题，每种方法各跑两次 | 工具、全量手册、按需手册、可委派组均 **24/24**；平均调用 **4.46、4.42、4.54、6.38**。只有 6/24 次实际委派。 | 没分出正确率胜负。工具组平均 tokens 最少，全量组平均调用略少：指标不同，不能笼统称为“最快最优”。 |
+| [两套上游的架构对照](fieldwork/2026-11-08/README.md) | 官方 kit：自由交接／补证据／主循环各 **6/6**，调用 **25／25／16**。日语电商：原专家／补物流工具／主循环的最终说明覆盖 **5/6、2/6、6/6**，三组主要业务结论均正确。 | 折回能省往返；增加专家权限也能省往返，但不保证最终作答使用了已有证据。 |
+| [商务审批](fieldwork/2026-11-08/commerce/README.md)与[安全循环](fieldwork/2026-11-08/aidless/README.md) | 旧调价草案导致实际涨幅 45%；最终验证拦住话术，却撤不回已执行的写入。 | 业务写入要在执行时核验，不能用模型最终表态替代后端审计。 |
+| [SQL 知识来源附实验](fieldwork/2026-11-08/langchain-reference/README.md) | 读 Skill **2/2**；普通工具返回相同正文 **2/2**；不给资料 **0/2**，模型追问口径。每条 SQL 实际执行于两份数据库。 | 关键是能取得公司规则；两道题不能证明技能库规模变大后检索方式仍等价。 |
 
-四种方案共享用户事实、业务工具、审批、评分、模型和单任务调用上限。只有三类只读业务工具和一个写工具，本轮不以工具搜索增加额外复杂度，也不声称验证大工具库发现能力。
+这些分数**不是同一张排行榜**。正式留出实验有 96 次运行、475 次模型请求；四个上游实跑另有 52 次任务、229 次请求。作者历史数据、脚本故障注入和未完成的批次分开列。模型均为同一型号的 Codex 桥接，业务状态是合成的，没有真实客户或支付数据。
 
-## 本地运行
+## 从哪里读、怎样验证
 
-最小应用入口：`bash demo.sh`。默认用 tools 主循环执行 d03 条件退货；它调用真实模型，动作只落在本地合成数据库。可传任务ID和新输出目录，例如 `bash demo.sh h03 runtime/my-demo`。
+- **理解文章并做设计：**[研究问题、术语与选型方法](docs/method.md)。包含交接漏项的具体例子、一份可直接填写的实验设计，以及什么证据会推翻我们的倾向。
+- **看全过程：**[实验总账](docs/studies/README.md)逐项列出设计、变化、分母、结果、失败、限制和来源；[四个上游的专门报告](fieldwork/2026-11-08/README.md)保留固定版本、判分与复跑方法。
+- **自己查数字：**[公开数据与字段](data/README.md)、[复算与复跑](docs/reproduce.md)。无需模型账户即可从逐次数据汇总、校验冻结代码和合成题，并运行工程测试。
+- **读代码或开展下一轮：**[代码与资产地图](docs/repository.md)、[贡献及实验规范](CONTRIBUTING.md)、[来源与归属](docs/sources.md)。[原始过程记录](docs/records/README.md)按时间保留，包括过期状态与修正。
 
-```bash
-uv sync --frozen --extra dev
-uv run --frozen --extra dev pytest -q
-uv run --frozen --extra dev ruff check .
-uv run --frozen loop-lab tasks
-```
-
-测试在真实 LangGraph、工具与 SQLite 边界运行，只有模型边界使用脚本替身。它们验证接线、策略和评分器，不用于推断模型效果。
-
-真实模型使用已登录的 Codex CLI。无需读取或复制认证令牌；需先有正常的 `codex login` 状态。CLI 自有 shell、apps、记忆、外部 Skills 等能力关闭。模型收到序列化的消息和业务工具 schema，返回动作 JSON；LangGraph 执行实际业务工具。模型只是决策者，不能读取评分答案或直接操作数据库。
+先试一次免费的核验：
 
 ```bash
-# 新目录，保留完整开发集四方案对照；会消耗模型计划额度。
-uv run --frozen loop-lab run --output runs/my-dev \
-  --split dev --variants multi tools skills eager --reps 1 --jobs 3 \
-  --max-calls 160 --max-tokens 1800000
-
-# 单个可阅读业务案例：确认到货日期后才退旧订单。
-uv run --frozen loop-lab run --output runs/my-demo \
-  --split dev --tasks d03 --variants skills --reps 1 --jobs 1 --max-calls 12
-
-# 从保留的模型/任务/源码身份恢复所有当前待审动作。
-uv run --frozen loop-lab resume runs/my-dev/d07-skills-0 --decision approve
-
-# 根据保存的每次运行生成逐题报告；不重新调用模型。
-uv run --frozen loop-lab report runs/my-dev
+git clone https://github.com/leoncuhk/agent-loop-lab.git
+cd agent-loop-lab
+python3 scripts/check_evidence.py
 ```
 
-每次实验写入新目录。人工恢复属于该会话的后续操作，不改写已冻结的原试验 `result.json` 与批次 `results.jsonl` 得分。恢复会复用原模型配置、累计调用计数和源码身份；源码已变、身份不同或无待审动作时拒绝恢复。
+脚本只用 Python 标准库，输出每批分母、通过数和请求数；不下载模型、不需要密钥。它能复查公开观察之间是否一致，不能凭摘要重建未分发的原始对话。若要重新取得模型决定，请按[复跑指南](docs/reproduce.md)另建新批次。
 
-## 数据、证据和验收
-
-- `manifest.json`：模型/effort/依赖/源码摘要、计划执行顺序、预算、实际用量、未运行清单。
-- `tasks.json`：该批次的合成输入与独立预期；不会作为模型请求内容。
-- `results.jsonl`：每个已启动任务的输出、真实工具事件、回执、失败原因、延迟与 tokens。
-- 每次任务下的 `model/`：逐模型调用的请求、CLI stdout/stderr 与用量账本。
-- `world.sqlite` / `checkpoint.sqlite`：业务回执与审批恢复状态。
-- `REPORT.md` / `summary.json`：逐方案、逐任务、配对任务聚类比较。预算未完成、用量未知或源码改变时，不给出完整架构比较结论。
-
-判分直接核验结构化事实的 key/value/source 与权威工具返回。子 Agent 的摘要不能自证；条件动作还要证明对应事实已进入决策上下文、且在动作前由权威工具取得。实际写入集、回执、拒绝后重试和多余动作都参与判分。
-
-8 个开发案例用于接线与候选筛选；16 个确认案例在实现冻结后使用。它们均由本实验作者构造，属于保留合成任务，不是独立真实业务样本。自然语言回复质量、客户转化、生产并发与大工具库不在此轮结论范围。
-
-## 预算与代价口径
-
-模型为 `gpt-6.1-sol`，默认低推理配置；每个任务最多 12 次模型调用，主 Agent 与专家共享。批次并行数可配置，按轮换顺序交错候选。
-
-调用次数上限可直接执行；token 采用已知用量加在途预留，每调用预留 50,000。CLI 不提供本实验可验证的服务端 token 硬上限，因此此处是停止阈值，不能保证任何情况下绝不超额。用量缺失即停止新请求，保留部分输出与未执行项。单任务用尽 12 次属于该方案在等预算下失败；整批预算耗尽则列为不完整实验。
-
-CLI 启动、认证及自有基础上下文包含在耗时与用量中。这不是原生 API 的绝对性能测试。登录态计划消耗没有核实的逐次美元价格，因此 `cost_usd=null`，不把它写成零成本。
-
-## 工程验证与来源
-
-本轮采用 TDD 公开边界测试：审批后才写入、重复动作幂等、跨用户拒绝、过期拒绝、事实证据、额外动作、审批目标、条件时序、拒绝后重试、跨进程恢复、多 interrupt ID 恢复、共享预算及未运行记录。
-
-独立 Standards/Spec 审查先后发现并修复了：动作后补查条件仍通过、拒绝后重试漏判、全局预算和单任务预算混淆、用量未知仍继续调用、恢复身份/预算重置、多审批中断与在途预算调度问题。真实效果实验在这些修复后冻结。
-
-设计参考：[LangChain Skills 示例](https://docs.langchain.com/oss/python/langchain/multi-agent/skills-sql-assistant)、[LangGraph interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)、[原文迁移 kit](https://github.com/anthropics/single-agent-loop-kit)。本实验没有复制参考 kit 的业务数据或将其示例成绩当作自己的结果。
-
-</details>
+**引用**请带实验名、判分口径和 Git 标签或提交，见 [CITATION.cff](CITATION.cff)。本项目原创代码和文档采用 [Apache-2.0](LICENSE)。Independent research; not affiliated with Anthropic. [English overview](docs/english.md).

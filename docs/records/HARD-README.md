@@ -1,6 +1,6 @@
 # 困难场景实践：LangGraph 中的知识、上下文与工具边界
 
-本轮在原项目扩展，保留旧实验、失败和冻结源码。设计见 [HARD-SPEC](HARD-SPEC.md)，正式配置见 [HARD-MATRIX](HARD-MATRIX.md)。时间从2026-11-06延续到11-07。
+本轮在原项目扩展，保留旧实验、失败和冻结源码。设计见 [HARD-SPEC](../../HARD-SPEC.md)，正式配置见 [HARD-MATRIX](../../HARD-MATRIX.md)。时间从2026-11-06延续到11-07。
 
 ## 实际运行结构
 

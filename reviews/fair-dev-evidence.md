@@ -40,13 +40,13 @@
 | DEV-R2 | B2/C4/T6；现金 11,649；utility 182；最新预算 11,649、平台 B、截止 2026-11-19、无排除仓库 | 两轮四方法全部一致，revision=2 |
 | DEV-A0 | east=5,100、west=4,400、north=7,650；异常 east/I05、north/I01、north/I11 | 两轮四方法金额、异常和实际事件集合全部一致 |
 
-原始入口：[v2 manifest](../runs/fair-dev-v2/manifest.json)、[v2 trials](../runs/fair-dev-v2/trials.jsonl)、[v3 manifest](../runs/fair-dev-v3/manifest.json)、[v3 trials](../runs/fair-dev-v3/trials.jsonl)。每个 trial 下的 `attempt-0/model/` 保留逐次 request、stdout、usage 和请求账本。
+原始入口：v2 manifest（本机 `runs/fair-dev-v2/manifest.json`）、v2 trials（本机 `runs/fair-dev-v2/trials.jsonl`）、v3 manifest（本机 `runs/fair-dev-v3/manifest.json`）、v3 trials（本机 `runs/fair-dev-v3/trials.jsonl`）。每个 trial 下的 `attempt-0/model/` 保留逐次 request、stdout、usage 和请求账本。
 
 ## 报价、实际拓扑与 host 收尾
 
 **金额由工具计算，候选来自模型。** 80 次报价调用的 SKU 列表与 revision 均逐条来自原始模型决策；模型参数没有手填现金或 utility。所有保存的 quote 的 SKU 集合都可追溯至模型提交的候选；944 份记录的定价独立重算一致。所有报价结果仍声明 `global_optimality=not_established`。本次验收在图外穷举得到最优，只用于核验结果，不能倒推为运行时工具替模型枚举了全空间。
 
-例如 [v3/P2/tools 的最后一次原始模型输出](../runs/fair-dev-v3/DEV-P2-tools-r0/attempt-0/model/call-003-main.stdout.jsonl) 仅调用 `stage_quote` 并传入已见 ID；对应 [result](../runs/fair-dev-v3/DEV-P2-tools-r0/attempt-0/result.json) 由真实草案回执形成最终 facts。24 个 trial 均按此链结束；105 份 usage 就是 105 份请求/原始响应，24 次 host 格式化没有被多算为模型调用。
+例如 v3/P2/tools 的最后一次原始模型输出（本机 `runs/fair-dev-v3/DEV-P2-tools-r0/attempt-0/model/call-003-main.stdout.jsonl`） 仅调用 `stage_quote` 并传入已见 ID；对应 result（本机 `runs/fair-dev-v3/DEV-P2-tools-r0/attempt-0/result.json`） 由真实草案回执形成最终 facts。24 个 trial 均按此链结束；105 份 usage 就是 105 份请求/原始响应，24 次 host 格式化没有被多算为模型调用。
 
 **实际拓扑全部为 single。** 所有 usage role 都是 main；`delegation_spans` 为空，工具事件没有 delegate，worker_count/worker_calls 均为零。multi 组主循环实际按需加载了 bundle-planning 或 ledger-snapshot；skills 的 R2 还加载 revision-control。eager 的正文预加载不表现为 load_skills 事件，不能把其空 `skills_loaded` 误解为没有方法知识。
 
