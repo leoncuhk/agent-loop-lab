@@ -10,7 +10,7 @@ jobs:
       - name: Check evidence without credentials or model calls
         run: |
           python3 scripts/check_evidence.py
-          python3 scripts/catalog.py
+          python3 scripts/check_links.py
       - uses: astral-sh/setup-uv@e92bafb6253dcd438e0484186d7669ea7a8ca1cc # v6.4.3
       - name: Install locked development environment
         run: uv sync --frozen --extra dev --python 3.12

@@ -16,6 +16,8 @@ uv run --frozen loop-lab tasks
 
 公开核验读取[逐次导出](../data/README.md)、正式独立审计、开源项目结果与用量摘要，重建平衡分配并核验冻结源码、知识和题目指纹。预期核心结果：客服 V1 64/64；困难 core 33/48 已启动；正式 4×24 次、475 请求；上游四项目 52 次、229 请求。不能用公开核验来证明未发布原始对话的真实性或重演旧后台状态。GitHub 检查只在手动选择 **Actions → Verify public evidence → Run workflow** 时运行，推送和 PR 均不触发。它在无需模型密钥的 Linux 环境运行公开核验和工程测试；实际执行记录请区分[本地验证与托管运行](records/PUBLICATION.md)。
 
+**从代码复查一笔结果。** [客服运行器](../src/loop_lab/runtime.py)、[困难任务运行器](../src/loop_lab/hard/runtime.py)和[冻结对照运行器](../src/loop_lab/fair/runtime.py)分别保留当期行为。正式实验由[调度器](../src/loop_lab/fair/study.py)分配任务，[业务工具](../src/loop_lab/fair/world.py)登记报价和写入，[独立验收程序](../analysis/audit_fair_evidence.py)从题面及回执复核；二者不共享求解实现。各阶段的协议、结果与上游复做入口统一见[实验记录](records/README.md)。
+
 ## 2 · 复做上游的离线工程检查或故障实验
 
 例如，从零取回官方 kit 的固定 Git 对象再跑其测试、冒烟与判分反例：
