@@ -15,6 +15,18 @@ PINS = {
 }
 
 
+def reference_root():
+    """Use the shared workspace checkout, or a standalone clone's sibling cache."""
+    if explicit := os.getenv("LOOP_LAB_REFERENCES"):
+        return Path(explicit).expanduser().resolve()
+    workspace = ROOT.parent.parent
+    if ROOT.parent.name == "runtime" and (workspace / "refs").is_dir():
+        return (workspace / "refs/upstream").resolve()
+    if ROOT.parent.name == "agent-runtime" and (workspace / "evaluation").is_dir():
+        return (workspace / "evaluation/references").resolve()
+    return (ROOT.parent / "references").resolve()
+
+
 def git(repo, *args, **kwargs):
     return subprocess.run(["git", "-C", str(repo), *args], text=True, **kwargs)
 
@@ -46,12 +58,23 @@ def prepare(project, base):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("projects", nargs="+", choices=sorted(PINS))
+    parser.add_argument("projects", nargs="*", metavar="PROJECT", help=", ".join(sorted(PINS)))
+    parser.add_argument(
+        "--show-cache", action="store_true", help="Print the cache path without fetching"
+    )
     parser.add_argument(
         "--cache",
         type=Path,
-        default=Path(os.getenv("LOOP_LAB_REFERENCES", ROOT.parent / "references")),
+        default=reference_root(),
     )
     args = parser.parse_args()
+    unknown = set(args.projects) - PINS.keys()
+    if unknown:
+        parser.error("unknown project(s): " + ", ".join(sorted(unknown)))
+    if args.show_cache:
+        print(args.cache.expanduser().resolve())
+        raise SystemExit(0)
+    if not args.projects:
+        parser.error("select projects or use --show-cache")
     for name in args.projects:
         prepare(name, args.cache.resolve())

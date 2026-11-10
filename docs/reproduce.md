@@ -30,7 +30,7 @@ python3 "$kit/native.py" runs/my-kit-offline
 python3 "$kit/probe.py" runs/my-kit-offline
 ~~~
 
-输出目录要尚未存在；若 Python 3.11 较早、不支持 tar 提取过滤，用 3.12。缓存只获取固定提交；已有上游 store 会先验对象，不切分支、不改工作树。默认查找仓库旁的 `../references`，设置环境变量可全部放入本仓忽略的 runs。另三个对象用 `python3 scripts/upstreams.py haty commerce aidless`。各项目的原版与附加验证命令：[haty](../fieldwork/2026-11-08/haty/README.md)、[commerce](../fieldwork/2026-11-08/commerce/README.md)、[aidless](../fieldwork/2026-11-08/aidless/README.md)。SQL 教程单独按内容指纹取得。[教程入口](../fieldwork/2026-11-08/langchain-reference/README.md)
+输出目录要尚未存在；若 Python 3.11 较早、不支持 tar 提取过滤，用 3.12。缓存只获取固定提交；已有上游 store 会先验对象，不切分支、不改工作树。本工作区默认复用 `research/evaluation/references`；独立 checkout 默认使用仓库旁的 `../references`。所有入口共享 `scripts/upstreams.py` 的定位规则，`python3 scripts/upstreams.py --show-cache` 只显示位置，不下载；`LOOP_LAB_REFERENCES` 可显式覆盖。另三个对象用 `python3 scripts/upstreams.py haty commerce aidless`。各项目的原版与附加验证命令：[haty](../fieldwork/2026-11-08/haty/README.md)、[commerce](../fieldwork/2026-11-08/commerce/README.md)、[aidless](../fieldwork/2026-11-08/aidless/README.md)。SQL 教程单独按内容指纹取得。[教程入口](../fieldwork/2026-11-08/langchain-reference/README.md)
 
 **若持有原始运行材料**，则可做更强的离线验证。例如以下命令直接读 CLI 原始事件、逐次工具返回及合成数据库；公开 clone 默认没有这些目录。冻结回执内有当时机器的路径，迁移后显式指定公开封存文件：
 

@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import platform
+import runpy
 import subprocess as sp
 import sys
 import tarfile
@@ -13,7 +14,9 @@ from pathlib import Path
 SHA = "c43796287b83bec847db923f07131d1cc8de750d"
 HERE = Path(__file__).resolve().parent
 LAB = HERE.parents[2]
-CLONE = Path(os.getenv("LOOP_LAB_REFERENCES", LAB.parent / "references")) / "single-agent-loop-kit"
+CLONE = (
+    runpy.run_path(str(LAB / "scripts/upstreams.py"))["reference_root"]() / "single-agent-loop-kit"
+)
 
 
 def run(out):
